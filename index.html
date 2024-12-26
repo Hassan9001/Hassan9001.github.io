@@ -1,14 +1,313 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="no-js" lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A simple static website">
-    <title>My Static Website</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hassan Al-Hayawi</title>
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
 </head>
+
 <body>
-    <h1>Welcome to My Static Website</h1>
-    <p>This is a simple static website.</p>
+    <div id="mobile-menu-open" class="shadow-large">
+        <i class="fa fa-bars" aria-hidden="true"></i>
+    </div>
+
+    <!-- End #mobile-menu-toggle -->
+    <header>
+        <div id="mobile-menu-close">
+            <span>Close</span> <i class="fa fa-times" aria-hidden="true"></i>
+        </div>
+        <ul id="menu" class="shadow">
+            <li><a href="#about">About</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#projects">Projects</a></li>            
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#awards">Awards</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </header>
+    <!-- End header -->
+
+    <div id="lead">
+        <div id="lead-content">
+            <h1>Hassan Al-Hayawi</h1>
+            <h2>Data Scientist & Machine Learning Engineer</h2>
+            <a href="#" class="btn-rounded-white">Download Resume</a>
+        </div>
+        <!-- End #lead-content -->
+
+        <div id="lead-overlay"></div>
+
+        <div id="lead-down">
+            <span>
+                <i class="fa fa-chevron-down" aria-hidden="true"></i>
+            </span>
+        </div>
+        <!-- End #lead-down -->
+    </div>
+    <!-- End #lead -->
+
+
+    <div id="about">
+        <div class="container">
+            <div class="col-md-4"><h2 class="heading">About Me</h2></div>
+            <div class="row1">
+                <div class="left-item"><img src="images/profile.png" alt="Profile Image" class="profile-image"></div>
+                <div class="col-md-8">
+                    </br>
+                    <p>• My work experience has equipped me with robust research skills, particularly in statistics, machine learning, and analysis of large neuroimaging datasets for multiple imaging modalities.</p>
+                    </br>
+                    <p>• My machine learning skills are highlighted through various projects in which I manage end-to-end ML pipelines, develop and evaluate models, process and analyze data for cleaning and feature engineering, etc...</p>
+                    </br>
+                    <p>• I have Deep knowledge of machine learning frameworks such as PyTorch and TensorFlow</p>
+                </div>
+            </div>
+        </div>
+    </div>    
+    <!-- End #about -->
+
+
+   <div id="education">
+        <h2 class="heading">Education </h2>
+        <div class="education-block">
+            <h3><img src="images/western_logo.jpg" alt="Western Logo" class="western_logo" style="width:35px; height:auto">  University of Western Ontario</h3>
+            <span class="education-date">Sept. 2022 - Aug 2024</span>
+            <h4>M.Sc. - Cognitive, Developmental and Brain Sciences</h4>
+            <p>• Thesis title: “Machine Learning for Prognosis of Acute Brain-Injured Patients in the ICU Using EEG Complexity Analysis and Naturalistic Narrative Stimuli”</p> 
+            <p>• Supervisors: Dr. Adrian Owen & Dr. Derek Debicki </p>
+        </div>
+        <!-- End .education-block -->
+        <div class="education-block">
+            <h3><img src="images/kings_logo.jpg" alt="Kings Logo" class="kings_logo" style="width:35px; height:auto">  King’s University College</h3>
+            <span class="education-date">Sept. 2018 - Apr. 2022</span>
+            <h4>B.A. - Honours Specialization in Psychology</h4>
+            <p>• Thesis title: “Cortical Function of Super Refractory Status Epilepticus: An fMRI Case Study”</p>
+            <p>• Supervisor: Dr. Loretta Norton</p>
+        </div>
+        <!-- End .education-block -->
+    </div>
+    <!-- End #education -->
+
+
+
+    <div id="projects" class="background-alt">
+        <h2 class="heading">Projects</h2>
+        <div class="container">
+            <div class="row">
+                <div class="project shadow-large">
+                    <div class="project-image">
+                        <img src="images/proj_logo_THESIS.png" />
+                    </div>
+                    <!-- End .project-image -->
+                    <div class="project-info">
+                        <h3>Health Care</h3>
+                        <h4>EEG Complexity for Prognosis of ICU Patients</h4>
+                        <p>• Used various algorithms to perform binary classification on EEG complexity features to assess ICU patient prognosis.</p>
+                        <p>• I used explainable statistical techniques to improve the transparency and interpretability of the models.</p>
+                        <p>• Evaluated model performance using cross-validation techniques and metrics, including accuracy, precision, recall, and area under the ROC curve (AUC).</p>
+                        <p>• Results showed 80% accuracy in predicting a patient's future clinical outcome using EEG recording from early ICU admission (AUC = 0.80–0.83).</p>
+                        <a href="https://github.com/Hassan9001/Prognosis_of_ICU_Patients_with_EEG_Complexity">View Project</a>
+                    </div>
+                    <!-- End .project-info -->
+                </div>
+                <!-- End .project -->
+
+                <div class="project shadow-large">
+                    <div class="project-image">
+                        <img src="images/proj_logo_UNET.png" />
+                    </div>
+                    <!-- End .project-image -->
+                    <div class="project-info">
+                        <h3>UNET</h3>
+                        <h4>MRI Image Segmentation of Mouse Kidneys and Bladders</h4>
+                        <p>• Manual segmentation of MRI images is costly and labour-intensive; a single dataset requires months of tedious work to complete. Automating this laborious task significantly improves the workflow and efficiency of preclinical research.</p>
+                        <p>• Thus, I created an automated image segmentation approach by training a convolutional neural network with a 3D U-NET model architecture to determine kidney and bladder volume in mice with bladder cancer.</p>
+                        <p>• I Collaborated with immunology researchers to confirm the accuracy of the segmentation results to ensure the model can reliably assess cancer progression in preclinical studies.</p>
+                        <p>• My model consistently produced results similar to those obtained by experienced manual segmenters, with a mean difference of only 2-5%.</p>
+                        <p>• Importantly, my model completed the task in mere moments compared to the months of manual human labour.</p>
+                        <a href="https://github.com/Hassan9001/MRI-UNET-Image-Segmentation/blob/main/README.md">View Project</a>
+                    </div>
+                    <!-- End .project-info -->
+                </div>
+                <!-- End .project -->
+
+                <div class="project shadow-large">
+                    <div class="project-image">
+                        <img src="images/montage.jpeg" />
+                    </div>
+                    <!-- End .project-image -->
+                    <div class="project-info">
+                        <h3>Modeling HRF</h3>
+                        <h4>HRF of Brain-Injured Patients with Simultaneous EEG-fNIRS</h4>
+                        <p>• Awarded a Provision Scholarship (OGS) for my written proposal to more accurately estimate the hemodynamic response function (HRF) of patients using a gradient descent-based search algorithm that maximizes the Pearson correlation between the recorded fNIRS and EEG signals.</p>
+                        <p>• This method will vastly improve the accuracy and sensitivity of functional neuroimaging results as it accounts for important underlying physiological mechanisms.</p>
+                        <a href="https://medium.com/@hassan.alhayawi/characterization-of-the-hemodynamic-response-function-in-acute-brain-injury-patients-895ed3537e76">View Project</a>
+                    </div>
+                    <!-- End .project-info -->
+                </div>
+                <!-- End .project -->
+            </div>
+        </div>
+    </div>
+    <!-- End #projects -->
+
+    <div id="awards">
+        <h2 class="heading">Awards, Honors, & Distinctions</h2>
+        <div class="awards_block">
+            <ul>
+                <li>2024 Ontario Graduate Scholarship (OGS) (valued at $15,000).</li>
+                <li>2023 Reva Gerstein Fellowship (valued at $4,000).</li>
+                <li>Gold medal, 2023 Canadian National Wrestling Championships – Greco-Roman category.</li>
+                <li>Gold medal, 2023 Ontario University Athletics (OUA) Wrestling Championship.</li>
+                <li>Silver medal, at the 2023 U-Sports Wrestling Championship.</li>
+                <li>2022 Ontario Graduate Scholarship (OGS) (valued at $15,000).</li>
+                <li>2021-2022 Ontario Wrestling Carding (valued at $3,000).</li>
+                <li>King's University College Dean’s List (2019-2022).</li>
+                <li>Peter Lockyer Wrestling Award (2018-2022) (total value of $10,500).</li>
+                <li>Gold medal, 2021 Ontario Senior Wrestling Provincial Championship.</li>
+                <li>King's University College Continuing Admission Academic Scholarship (2018-2021) (total value of $4,500).</li>
+                <li>King's University College Academic Athletic Scholarship (2018-2021) (total value of $12,000).</li>
+            </ul>
+        </div>
+        <div><img src="images/wrestling.jpg" style="width:400px; height:auto"></div>
+    </div>
+    
+<!-- 
+ 
+    <div id="awards">
+        <h2 class="heading">Awards, Honors, & Distinctions</h2>
+        <div class="awards_block">
+            <ul>
+                <li>2024 Ontario Graduate Scholarship (OGS) (valued at $15,000).</li>
+                <li>2023 Reva Gerstein Fellowship (valued at $4,000).</li>
+                <li>Gold medal, 2023 Canadian National Wrestling Championships – Greco-Roman category.</li>
+                <li>Gold medal, 2023 Ontario University Athletics (OUA) Wrestling Championship.</li>
+                <li>Silver medal, at the 2023 U-Sports Wrestling Championship.</li>
+                <li>2022 Ontario Graduate Scholarship (OGS) (valued at $15,000).</li>
+                <li>2021-2022 Ontario Wrestling Carding (valued at $3,000).</li>
+                <li>King's University College Dean’s List (2019-2022).</li>
+                <li>Peter Lockyer Wrestling Award (2018-2022) (total value of $10,500).</li>
+                <li>Gold medal, 2021 Ontario Senior Wrestling Provincial Championship.</li>
+                <li>King's University College Continuing Admission Academic Scholarship (2018-2021) (total value of $4,500).</li>
+                <li>King's University College Academic Athletic Scholarship (2018-2021) (total value of $12,000).</li>
+            </ul>
+        </div>
+
+    </div>
+     -->
+
+
+
+    <div id="experience" class="background-alt">
+        <h2 class="heading">Additional Experience</h2>
+        <div id="experience-timeline">
+            <div data-date="September 2014 – May 2017">
+                <h3>East Leyden High Schools</h3>
+                <h4>Technical Support Intern</h4>
+                <p>
+                    Provide networking/desktop support and perform mainframe and account maintenance tasks. Earned commendations for teamwork, flexibility and work excellence in providing IT support to students and faculty. Manage a network of over 10,000 Chromebooks and devices. Effectively find solutions to student hardware in a timely manner. Follow a personalized pathway in a technological subject.
+                </p>
+            </div>
+
+            <div data-date="January 2017 – November 2017">
+                <h3>Best Buy </h3>
+                <h4>Mobile Specialist</h4>
+                <p>
+                    Provide world class service to while analyzing mobile accounts. Setting up and diagnosing common mobile device issues.  Selling services related to mobile carriers and reading customers to expertly find them their perfect product. High pace environment at times requiring lots of concentration and patience.                
+                </p>
+            </div>
+
+            <div data-date="November 2017 – Current">
+                <h3>Best Buy GeekSquad</h3>
+                <h4>Advanced Repair Agent</h4>
+                <p>
+                    Quickly solve and find effective solutions to complex problems in a fast paces technology oriented environment. Document and fix issues that appear throughout client laptops and desktop computers. Maintained records of daily data communication transactions, problems and remedial actions taken or installation activities. Created service tags and send out client computers and store computer to service centers.  Developed training materials and procedures. Trained users in the proper use of hardware and/or software. 
+                </p>
+            </div>
+
+            
+        </div>
+    </div>
+    <!-- End #experience -->
+
+
+    <div id="skills">
+        <h2 class="heading">Skills & Certificates</h2>
+        <ul>
+            <li>JavaScript</li>
+            <li>Python</li>
+            <li>Node.js</li>
+            <li>React</li>
+            <li>Java</li>
+            <li>C</li>
+            <li>C#</li>
+            <li>C++</li>
+            <li>Ruby on Rails</li>
+            <li>React</li>
+            <li>Firebase & Firestore</li>
+            <li>SQL</li>
+            <li>BASH Scripting</li>
+            <li>DOS Scripting</li>
+        </ul>
+    </div>
+    <!-- End #skills -->
+
+
+
+
+
+    <div id="contact">
+        <h2>Get in Touch</h2>
+        <div id="contact-form">
+            <form method="POST" action="https://formspree.io/email@email.com">
+                <input type="hidden" name="_subject" value="Contact request from personal website" />
+                <input type="email" name="_replyto" placeholder="Your email" required>
+                <textarea name="message" placeholder="Your message" required></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </div>
+        <!-- End #contact-form -->
+    </div>
+    <!-- End #contact -->
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-5 copyright">
+                    <p>
+                        Copyright &copy; 2021 Jakub Smolucha
+                    </p>
+                </div>
+                <div class="col-sm-2 top">
+                    <span id="to-top">
+                        <i class="fa fa-chevron-up" aria-hidden="true"></i>
+                    </span>
+                </div>
+                <div class="col-sm-5 social">
+                    <ul>
+                        <li>
+                            <a href="https://github.com/jsmolucha" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/jakub-smolucha-856649b9/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- End footer -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/scripts.min.js"></script>
 </body>
+
 </html>
