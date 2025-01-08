@@ -96,7 +96,7 @@
     border-radius:4px}
     .project-image{
         float:left;
-        /* transform:translateX(-50%) */}
+        transform:translateX(-50%)}
     .project-info{
         position:absolute;
         /* top:50%;
