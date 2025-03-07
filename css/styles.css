@@ -328,7 +328,16 @@ footer{padding:50px 0}
 /* #skills{padding:50px 15px;text-align:center} */
 #skills h2{color:#374054;margin-bottom:50px}
 #skills ul{display:block;margin:0 auto;padding:0;max-width:800px;font-size:1.1em}
-#skills li{display:inline-block;margin:7px;padding:5px 10px;color:#374054;background:#e4e4ea;list-style:none;cursor:default;font-size:1em}
+#skills li{
+    display:inline-block;
+    margin:7px;padding:5px 10px;
+    color:#374054;
+    background:#e4e4ea;
+    list-style:none;
+    cursor:default;
+    font-size:1em;
+    border-radius:20px;
+}
 
 
 /* ___________________________________________________________PUBLICATIONS*/
@@ -346,7 +355,7 @@ footer{padding:50px 0}
     max-width:800px;
     font-size:1.3em;
     background:#ffffff
-    ;border:1px solid #ffffff;
+    ;border:1px solid #000000;
     padding:30px;
     border-radius:10px;
     text-align:left
@@ -360,7 +369,7 @@ footer{padding:50px 0}
     list-style:none;
     cursor:default;
     font-size:0.8em;
-    border:1px solid #000000;
+    /* border:1px solid #8a2222; */
     padding:10px;
     border-radius:10px;
     text-align:left
