@@ -14,8 +14,7 @@ body.active{overflow:hidden;z-index:-1}
 @keyframes dropHeader{0%{transform:translateY(-100%)}100%{transform:translateY(0)}}
 header{position:absolute;top:0;left:0;right:0;text-align:center;z-index:10;animation-name:dropHeader;animation-iteration-count:1;animation-timing-function:ease;animation-duration:0.75s}
 header ul{display:inline-block;background:#494949ce;text-align:center;padding:10px;margin:0;border-bottom-right-radius:4px;border-bottom-left-radius:4px;
-box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.3);/*#adds a shadow*/
-}
+box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.3);/*#adds a shadow*/}
 header li{display:inline-block}
 header a{display:block;color:rgb(205, 232, 255);padding:10px}
 header a:hover{color:#5dbeff;text-decoration:none;background:#eee;border-radius:4px}
@@ -54,8 +53,7 @@ footer{padding:50px 0}
 #lead-content h3 img {
     width: 3em;
     height: auto;
-    vertical-align: middle;
-}
+    vertical-align: middle;}
 #lead-overlay{position:absolute;height:100%;width:100%;top:0;right:0;bottom:0;left:0;background:rgba(33, 125, 187, 0);z-index:1}
 #lead-down{position:absolute;left:0;right:0;width:100%;text-align:center;z-index:10;bottom:15px;color:#fff}
 #lead-down span{cursor:pointer;display:block;margin:0 auto;width:35px;height:35px;border-radius:50%;border:3px solid #a0cfee;text-align:center}
@@ -66,8 +64,7 @@ footer{padding:50px 0}
 
 /* ABOUT ME_________________________________________________________________________*/
 #about{padding:75px 15px;border-bottom:1px solid #dcd9d9;
-    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.3);/*#adds a shadow*/
-}
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.3);/*#adds a shadow*/}
 #about h2{color:#374054}
 #about p{color:#74808a;margin:0}
 @media only screen and (max-width: 767px){#about h2{margin-bottom:0px}}
@@ -85,11 +82,9 @@ footer{padding:50px 0}
     /*-webkit-box-shadow: inset 0 0 20px #636161; /* Adds an inset shadow inside the element for WebKit-based browsers */
     /*box-shadow: inset 0 0 20px #636161 /* Adds an inset shadow inside the element for standard browsers */
     /* z-index: 1; Ensure the text is above the background image */
-    /* background: rgba(255, 255, 255, 0.9); /*Add a background color with transparency for readability */
-}
+    /* background: rgba(255, 255, 255, 0.9); /*Add a background color with transparency for readability */}
 .profile-image {max-width: 100%;height: auto;border-radius: 0%; /* Optional: make the image circular */}
-.row1{
-    display:flex;
+.row1{display:flex;
     justify-content:space-between;/*Distributes space between items */
     align-items: center: /* aligns items vertically in the center*/}
 .col-md-4{text-align:center}
@@ -101,9 +96,7 @@ footer{padding:50px 0}
 
 
 /* ________EDUCATION_________________________________________________________________*/
-#education{padding:100px 15px 100px 15px;border-bottom:1px solid #dcd9d9;text-align:center;
-}
-
+#education{padding:100px 15px 100px 15px;border-bottom:1px solid #dcd9d9;text-align:center;}
 #education h2{color:#374054;margin-bottom:50px}
 .education-block{
     max-width:700px;
@@ -124,8 +117,7 @@ footer{padding:50px 0}
     height: 0px;  
     /* box-shadow: inset 0 0 20px #636161; /* Adds an inset shadow inside the element for standard browsers */
     /* z-index: 1; /* Ensure the text is above the background image */
-    /* background: rgba(255, 255, 255, 0.9); /*Add a background color with transparency for readability */
-}
+    /* background: rgba(255, 255, 255, 0.9); /*Add a background color with transparency for readability */}
 /* .education-block p {margin:0;font-size:0.9em;mix-blend-mode:difference;color: rgb(241, 234, 234);} */
 
 
@@ -135,73 +127,56 @@ footer{padding:50px 0}
 
 
 /* _________________________PROJECTS________________________________________________*/
-#projects{
-    padding:50px 15px;
+#projects{padding:50px 15px;
     border-bottom:1px solid #dcd9d9;
     text-align:center;
-    box-shadow: -5px -5px 30px rgba(0, 0, 0, 0.3);/*#adds a shadow*/
-}
-#projects h2{
-    color:#374054;
+    box-shadow: -5px -5px 30px rgba(0, 0, 0, 0.3);/*#adds a shadow*/}
+#projects h2{color:#374054;
     margin-bottom:50px}
-.project{
-    position:relative;
+.project{position:relative;
     max-width:900px;
     margin:0 auto 30px auto;
     overflow:hidden;
     background:#fff;
     border-radius:4px}
-    .project-image{
-        float:left;
-        /* transform:translateX(-50%) */}
+    .project-image{float:left;/* transform:translateX(-50%) */}
     .project-info{
         /* position:absolute; */
         /* top:50%;
         transform:translateY(-50%); */
         margin-left:300px;padding:15px}
-    .project-info h3{
-        font-size:1.5em;
+    .project-info h3{font-size:1.5em;
         font-weight:300;
         color:#374054;
         margin:0 0 15px 0}
-    .project-info h4{
-        font-size:1.2em;
+    .project-info h4{font-size:1.2em;
         font-weight:300;
         color:#374054;
         margin:0 0 15px 0}
-    .project-info p{
-        color:#74808a;
+    .project-info p{color:#74808a;
         margin:0 0 15px 0;
         font-size:0.9em}
     .no-image .project-info{position:relative;margin:0;padding:30px 15px;transform:none}
 #more-projects{display:none}
-
-
-
 /* .container:col-md-4{grid-row-start:auto} */
-
 /* .container { */
     /* display: grid; */
     /* grid-template-columns: 1fr 1fr; Two columns */
     /* grid-template-rows: auto auto; Two rows */
     /* gap: 10px; Adjust gap as needed */
 /* } */
-
 /* .left-item { */
     /* grid-column: 1 / 2; Span across the first column */
     /* grid-row: 1 / 3; Span across two rows */
     /* background-color: #f0f0f0; Just for visual distinction */
 /* } */
-
 /* .col-md-8 { */
     /* grid-column: 2 / 3; Span across the second column */
     /* background-color: #d0d0d0; Just for visual distinction */
 /* } */
-
 /* .col-md-4:nth-child(2) { */
     /* grid-row: 1 / 2; First right item in the top row */
 /* } */
-
 /* .col-md-8:nth-child(3) { */
     /* grid-row: 2 / 3; Second right item in the bottom row */
 
@@ -214,22 +189,14 @@ footer{padding:50px 0}
 .wrestling-img {float:inline-end;height: 0px;  }
 @media only screen and (max-width: 768px){.wrestling-img{display:none}}
 .wrestlingimage{text-align: center; position: relative}
-    /* ) no-repeat right center;} */
-#awards{
-    padding:0px 15px 20px 15px;
+#awards{padding:0px 15px 20px 15px;
     border-bottom:1px solid #dcd9d9;
     position: relative; /* Make sure the position is relative */
-    text-align:center;
-
-}
-   
-
-#awards h2{
-    color:#374054;
+    text-align:center;}
+#awards h2{color:#374054;
     margin-bottom:35px;
     margin-top:50px;}
-.awards_block{
-    max-width:700px;
+.awards_block{max-width:700px;
     margin:0 auto 30px auto;
     padding:15px;
     border:1px solid #dcd9d9;
@@ -238,12 +205,10 @@ footer{padding:50px 0}
     z-index: 1;
     background: url('images/diploma_black.png') no-repeat left center; /* Add the background image here */ 
     background-size:contain;}
-.awards_block ul{
-    margin:0;
+.awards_block ul{margin:0;
     color:#74808a;
     font-size:0.9em}
-.awards_block ul{
-    padding:0 0 0 15px}
+.awards_block ul{padding:0 0 0 15px}
 .awards_block ul li strong {/* This is for the Bolded text in Awards section*/
     color:#000000;
     font-weight: bold;
@@ -251,7 +216,6 @@ footer{padding:50px 0}
     /* color: #d9534f; Change text color to make it stand out */
     background-color: #ffffffd5; /* Add background color for contrast */
     /* padding: 2px 4px; Add some padding for better visibility */}
-    
 /* #awards { */
     /* padding: 50px 15px 20px 15px; */
     /* border-bottom: 1px solid #dcd9d9; */
@@ -260,12 +224,10 @@ footer{padding:50px 0}
     /* background-position: left center; Position the image to the left */
     /* background-size: contain; Ensure the image scales correctly */
 /* } */
-
 /* #awards h2 { */
     /* color: #374054; */
     /* margin-bottom: 50px; */
 /* } */
-
 /* .awards_block { */
     /* max-width: 700px; */
     /* margin: 0 auto 30px auto; */
@@ -276,7 +238,6 @@ footer{padding:50px 0}
     /* z-index: 1; Ensure the text is above the background image */
     /* background: rgba(255, 255, 255, 0.9); Add a background color with transparency for readability */
 /* } */
-
 /* .awards_block ul { */
     /* margin: 0; */
     /* color: #74808a; */
@@ -284,18 +245,17 @@ footer{padding:50px 0}
     /* padding: 0 0 0 15px; */
 /* } */
 
+
+
+
 /* ___________________________________________________________ADDITIONAL EXPEREIENCE*/
 .no-js #experience-timeline>div{background:#fff;padding:10px;margin-bottom:10px;border:1px solid #dcd9d9}
 .no-js #experience-timeline>div h3{font-size:1.5em;font-weight:300;color:#374054;display:inline-block;margin:0}
 .no-js #experience-timeline>div h4{font-size:1.2em;font-weight:300;color:#7e8890;margin:0 0 15px 0}
 .no-js #experience-timeline>div p{color:#74808a;font-size:0.9em;margin:0}
 .no-js #experience-timeline:before,.no-js #experience-timeline:after{content:none}
-
-
 #experience{padding:50px 15px;text-align:center;border-bottom:1px solid #dcd9d9;
-    box-shadow: -5px -5px 30px rgba(0, 0, 0, 0.3);/*#adds a shadow*/
-}
-
+    box-shadow: -5px -5px 30px rgba(0, 0, 0, 0.3);/*#adds a shadow*/}
 #experience h2{color:#374054}
 #experience-timeline{margin:30px auto 0 auto;position:relative;max-width:1000px}
 #experience-timeline:before{position:absolute;content:'';top:0;bottom:0;left:303px;right:auto;height:100%;width:3px;background:#3498db;z-index:0}
@@ -304,14 +264,12 @@ footer{padding:50px 0}
 .vtimeline-content h3{font-size:1.5em;font-weight:300;color:#0f4bcc;display:inline-block;margin:0}
 .vtimeline-content span{font-size:1em;color:#74808a; float:right;}
 .vtimeline-content h4{font-size:1.2em;font-weight:300;color:#7e8890;margin:0 0 0px 0}
-.vtimeline-content p{
-    color:#74808a;
+.vtimeline-content p{color:#74808a;
     font-size:0.9em;
     margin:0;
     /*font-style:italic; Add this line to italicize the text*/
     /*font-weight: bold;  Add this line to bold the text */ }
-.vtimeline-content ul{
-    color:#74808a;
+.vtimeline-content ul{color:#74808a;
     font-size:0.9em;
     margin: 0.5em;}
 .vtimeline-point{position:relative;display:block;vertical-align:top;margin-bottom:30px}
@@ -321,45 +279,70 @@ footer{padding:50px 0}
 
 
 
-
+/* #lead-content h1,#lead-content h2,#lead-content h3{margin:0}
+#lead-content h1{color:#fff;font-weight:900;font-size:5em;text-transform:uppercase;letter-spacing:0.05em;line-height:0.9em}
+#lead-content h2{color:#a0cfee;font-weight:500;font-size:2.25em;margin-bottom:0px}
+#lead-content h3{color:#ffffff;font-weight:500;font-size:1.25em;margin-bottom:15px} */
 
 /* ___________________________________________________________Skills*/
 #skills{padding:50px 15px;text-align:center;border-bottom:1px solid #dcd9d9;}
 /* #skills{padding:50px 15px;text-align:center} */
 #skills h2{color:#374054;margin-bottom:50px}
-#skills ul{display:block;margin:0 auto;padding:0;max-width:800px;font-size:1.1em}
-#skills li{
-    display:inline-block;
-    margin:7px;padding:5px 10px;
+.ul-label-skill{
+    font-size: 1.3em;
+    margin: 0;
+    color: #374054;
+    font-weight: 399;
+    text-align: left;
+    padding-left: 50px;}
+#skills ul{display:block;
+    margin:0 auto;
+    padding:0;
+    max-width:800px;
+    /* font-size:1.1em */}
+#skills li{ /* for the NEUROimAGING SKILSL  */
+    /* display:inline-block; */
+    margin:0px;
+    margin-bottom: 7px;
+    padding:3px 10px;
     color:#374054;
     background:#e4e4ea;
     list-style:none;
     cursor:default;
-    font-size:1em;
-    border-radius:20px;
-}
+    font-size:0.8em;
+    border-radius:20px;}
+.li-label-skill{/* for the NEUROimAGING SKILSL  */
+    display:inline-block;
+    /* margin:7px;
+    padding:5px 10px; */
+    color:#374054;
+    background:#e4e4ea;
+    list-style:none;
+    cursor:default;}
+
 
 
 /* ___________________________________________________________PUBLICATIONS*/
 #pubs{padding:50px 15px;text-align:center;border-bottom:1px solid #dcd9d9;
-    box-shadow: -5px -5px 30px rgba(0, 0, 0, 0.3);/*#adds a shadow*/
-}
-   
-
-#pubs h2{color:#374054;
-    margin-bottom:20px}
-#pubs ul{
-    display:block;
+    box-shadow: -5px -5px 30px rgba(0, 0, 0, 0.3);/*#adds a shadow*/}
+#pubs h2{color:#374054; margin-bottom:20px}
+.ul-label-pub{
+    font-size: 1.3em;
+    margin: 0;
+    color: #374054;
+    font-weight: 399;
+    text-align: left;
+    padding-left: 50px;}
+#pubs ul{display:block;
     margin:0 auto;
-    padding:10px 100px 10px 100px;
+    padding:10px 100px 10px 50px;
     max-width:800px;
-    font-size:1.3em;
-    background:#ffffff
-    ;border:1px solid #000000;
+    background:#ffffff;
+    border:1px solid #dcd9d9;/* border:1px solid #000000; */
     padding:30px;
-    border-radius:10px;
-    text-align:left
-}
+    text-align:left; 
+    /* font-size:1.3em; */
+    /* border-radius:10px; */}
 #pubs li{
     display:inline-block;
     margin:7px;
@@ -369,25 +352,23 @@ footer{padding:50px 0}
     list-style:none;
     cursor:default;
     font-size:0.8em;
-    /* border:1px solid #8a2222; */
     padding:10px;
-    border-radius:10px;
-    text-align:left
-}
+    text-align:left;
+    /* border:1px solid #8a2222; */
+    /* border-radius:10px; */}
 #pubs ul li strong {/* This is for the Bolded text in Awards section*/
     font-weight: bold;
-    font-size: 1.1em; /* Increase font size for stronger emphasis */
+    font-size: 1.2em; /* Increase font size for stronger emphasis */
     /* color: #d9534f; Change text color to make it stand out */
     background-color: #ffffff; /* Add background color for contrast */
     /* padding: 2px 4px; Add some padding for better visibility */}
 
 
+
+
 /* ___________________________________________________________CONTACT ME*/
 #contact{padding:50px 15px;background:#13460f;text-align:center;
-    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.3);/*#adds a shadow*/
-}
-    
-
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.3);/*#adds a shadow*/}
 #contact h2{margin:0 0 15px 0;color:#fff;font-weight:500}
 #contact-form{max-width:500px;margin:0 auto}
 #contact-form input,#contact-form textarea{display:block;width:100%;padding:10px;border-radius:4px;border:none;margin-bottom:10px;background:#688191;color:#fff;transition:.5s ease all}
@@ -400,15 +381,20 @@ footer{padding:50px 0}
 #contact-form button{display:block;width:100%;background:#fff;border-radius:4px;padding:5px 10px;border:none;color:#34db66;font-weight:700;box-shadow:0 1px 3px rgba(0,0,0,0.12),0 1px 2px rgba(0,0,0,0.24);transition:.5s ease all}
 #contact-form button:hover{box-shadow:0 10px 20px rgba(0,0,0,0.19),0 6px 6px rgba(0,0,0,0.23)}
 .optional-section{padding:50px 15px;text-align:center;border-top:10px solid #f50606;
-    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.3);/*#adds a shadow*/
-}
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.3);/*#adds a shadow*/}
 .optional-section h2{color:#e012e7}
 .optional-section-block{max-width:700px;margin:0 auto 30px auto;padding:15px;border:1px solid #dcd9db;background:#f701ce50;text-align:left}
 .optional-section-block h3{font-weight:500;margin:0 0 15px 0;color:#e203ff}
 .optional-section-block h4{color:#74808a;clear:both;font-weight:500;margin:0 0 15px 0}
 .optional-section-block p,.optional-section-block ul{margin:0 0 15px 0;color:#74808a;font-size:0.9em}
 .optional-section-block ul{padding:0 0 0 15px}
-    
+/* BEFORE:full DOI url Displayed ----> AFTER:original 'doi' Hidden =========@FOR_SMALL_SCREEN=========> BEFORE:full DOI url is Hidden this time ----> AFTER:original 'doi' Displayed this time */
+.doi::before {content: "https://doi.org/10.1101/2024.10.02.24314815"}                                                   
+.doi {text-decoration: none; color: blue /* Link Color */}
+.doi::after {content: ""}                                                                                               
+@media only screen and (max-width: 466px) {
+    .doi::before {content: ""}
+    .doi::after {content: "doi link"}}
 
 
 
@@ -420,7 +406,6 @@ footer{padding:50px 0}
     .vtimeline-date{width:auto;text-align:left;position:relative;margin-bottom:15px;display:block;margin-left:70px}
     .vtimeline-icon{margin-left:0}
     .vtimeline-content{margin-left:70px}}
-
 @media only screen and (max-width: 992px){
     #lead{height:auto;min-height:auto;max-height:auto;padding:100px 15px}
     #lead-content{position:relative;transform:none;left:auto;top:auto}
@@ -448,8 +433,7 @@ footer{padding:50px 0}
         overflow:hidden;
         z-index:-1; 
         position: relative; 
-        clip: rect(0, 100px, 100px, 0);  */
-    }
+        clip: rect(0, 100px, 100px, 0);  */}
     .project-image{display:none}
     .project-info{position:relative;margin:0;padding:30px 15px;top:auto;transform:none}
     footer{text-align:center}
@@ -461,3 +445,4 @@ footer{padding:50px 0}
     #lead-content h2{font-size:1em}
     #lead-content h3 {font-size:0.7em}
     #lead-content a{font-size:0.9em;padding:5px 10px}}
+  
