@@ -24,6 +24,7 @@
             <span>Close</span> <i class="fa fa-times" aria-hidden="true"></i>
         </div>
         <ul id="menu" class="shadow">
+            <li><a href="#lead">Home</a></li>  
             <li><a href="#about">About</a></li>
             <li><a href="#education">Education</a></li>
             <li><a href="#experience">Experience</a></li>            
@@ -141,7 +142,7 @@
                 <p>Skills: <em>Deep Learning · Neural Networks (ResNet & Transformer based models)</em></p>
             </div>
 
-            <div data-date="May 2025 – September 2025">
+            <div data-date="January 2025 – September 2025">
                 <h3>Machine Learning Research Assistant</h3>
                 <span>London, ON., Canada</span>
                 <h4>The Haeryfar Lab</h4>
@@ -480,6 +481,71 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="js/scripts.min.js"></script>
+
+<!-- AUTO SCROLL SPEED WHEN HEAD OPTION IS CLICKED -->
+<script>
+  (function ($) {
+    if (!window.jQuery) return;
+
+    const DURATION_MS = 1000; // same speed for every link (try 300–800)
+
+    $('header a').off('click').on('click', function (e) {
+      if ($(this).hasClass('no-scroll')) return;
+
+      e.preventDefault();
+
+      const heading = $(this).attr('href');
+      const $target = $(heading);
+      if (!$target.length) return;
+
+      $('html, body')
+        .stop(true)
+        .animate({ scrollTop: $target.offset().top + 'px' }, DURATION_MS);
+
+      // close mobile menu if open
+      if ($('header').hasClass('active')) {
+        $('header, body').removeClass('active');
+      }
+    });
+  })(window.jQuery);
+</script>
+<!-- HEADER OPTIONS BANNER disapears when scrolling down and apears when scrolling up -->
+<script>
+  (function () {
+    const header = document.querySelector("header");
+    if (!header) return;
+
+    let lastY = window.scrollY;
+    const threshold = 10;     // ignore tiny scroll jitters
+    const showAtTop = 50;     // always show near top
+
+    window.addEventListener("scroll", () => {
+      const y = window.scrollY;
+      const delta = y - lastY;
+
+      // Always show close to the top
+      if (y < showAtTop) {
+        header.classList.remove("nav-hidden");
+        lastY = y;
+        return;
+      }
+
+      // Scrolling down => hide
+      if (delta > threshold) {
+        header.classList.add("nav-hidden");
+        lastY = y;
+        return;
+      }
+
+      // Scrolling up => show
+      if (delta < -threshold) {
+        header.classList.remove("nav-hidden");
+        lastY = y;
+        return;
+      }
+    }, { passive: true });
+  })();
+</script>
 </body>
 
 </html>
