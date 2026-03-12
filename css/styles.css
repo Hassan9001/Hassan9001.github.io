@@ -8,8 +8,10 @@
     that don't come from third party libraries. This file gets compiled using
     Gulp and send to the /css folder which is then loaded on the page.
 */body{font-family:'Lato', sans-serif;font-size:16px}
-body.active{overflow:hidden;z-index:-1}
-
+/* body.active{overflow:hidden;z-index:-1} */
+/* body.active{overflow:hidden;position:fixed;width:100%;} */
+body.active{overflow: hidden;}
+/* body.active{overflow: auto;} */
 
 @keyframes dropHeader{0%{transform:translateY(-100%)}100%{transform:translateY(0)}}
 header{

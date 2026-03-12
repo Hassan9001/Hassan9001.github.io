@@ -22,16 +22,38 @@
         if ($(this).hasClass('no-scroll')) return;
 
         e.preventDefault();
+
         var heading = $(this).attr('href');
-        var scrollDistance = $(heading).offset().top;
+        var $target = $(heading);
 
-        $('html, body').animate({
-            scrollTop: scrollDistance + 'px'
-        }, Math.abs(window.pageYOffset - $(heading).offset().top) / 1);
+        if (!$target.length) return;
 
-        // Hide the menu once clicked if mobile
+        var isMobile = window.innerWidth <= 768;
+        var headerHeight = $('header').outerHeight() || 0;
+        var scrollDistance = $target.offset().top;
+
+        // On desktop, account for fixed header
+        if (!isMobile) {
+            scrollDistance = scrollDistance - headerHeight;
+        }
+
+        // Stop any previous scroll animation first
+        $('html, body').stop(true, true);
+
+        // Close mobile menu BEFORE scrolling
         if ($('header').hasClass('active')) {
             $('header, body').removeClass('active');
+
+            // let layout settle after menu closes, then scroll
+            setTimeout(function () {
+                $('html, body').animate({
+                    scrollTop: scrollDistance
+                }, 600);
+            }, 50);
+        } else {
+            $('html, body').animate({
+                scrollTop: scrollDistance
+            }, 600);
         }
     });
 
@@ -78,7 +100,9 @@
 
     // Open mobile menu
     $('#mobile-menu-open').click(function() {
+        $('html, body').stop(true, true);
         $('header, body').addClass('active');
+        $('header').removeClass('nav-hidden');
     });
 
     // Close mobile menu

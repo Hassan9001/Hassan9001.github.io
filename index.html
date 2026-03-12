@@ -480,8 +480,40 @@
     <!-- End footer -->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="js/scripts.min.js"></script>
+    <script src="js/scripts.js"></script> 
+    <!-- <script src="js/scripts.min.js"></script> -->
 
+<!-- FIXINg mobile menu and scrolling position issue -->
+<script>
+  (function ($) {
+    if (!window.jQuery) return;
+
+    let scrollY = 0;
+
+    // OPEN mobile menu
+    $('#mobile-menu-open').off('click').on('click', function () {
+      scrollY = window.scrollY;
+
+      $('body')
+        .css('top', `-${scrollY}px`)
+        .addClass('active');
+
+      $('header').addClass('active');
+    });
+
+    // CLOSE mobile menu
+    $('#mobile-menu-close').off('click').on('click', function () {
+      $('body')
+        .removeClass('active')
+        .css('top', '');
+
+      $('header').removeClass('active');
+
+      window.scrollTo(0, scrollY);
+    });
+
+  })(window.jQuery);
+</script>
 <!-- AUTO SCROLL SPEED WHEN HEAD OPTION IS CLICKED -->
 <script>
   (function ($) {
@@ -518,25 +550,34 @@
     let lastY = window.scrollY;
     const threshold = 10;     // ignore tiny scroll jitters
     const showAtTop = 50;     // always show near top
+    const desktopOnlyBreakpoint = 768;
+
+    function isDesktop() {
+      return window.innerWidth > desktopOnlyBreakpoint;
+    }
 
     window.addEventListener("scroll", () => {
       const y = window.scrollY;
       const delta = y - lastY;
 
+      // Disable hide/show behavior on small screens
+      if (!isDesktop()) {
+        header.classList.remove("nav-hidden");
+        lastY = y;
+        return;
+      }
       // Always show close to the top
       if (y < showAtTop) {
         header.classList.remove("nav-hidden");
         lastY = y;
         return;
       }
-
       // Scrolling down => hide
       if (delta > threshold) {
         header.classList.add("nav-hidden");
         lastY = y;
         return;
       }
-
       // Scrolling up => show
       if (delta < -threshold) {
         header.classList.remove("nav-hidden");
@@ -544,6 +585,13 @@
         return;
       }
     }, { passive: true });
+
+    // Also force the header visible whenever resizing down to mobile
+    window.addEventListener("resize", () => {
+      if (!isDesktop()) {
+        header.classList.remove("nav-hidden");
+      }
+    });
   })();
 </script>
 </body>
