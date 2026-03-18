@@ -307,19 +307,19 @@ footer{padding:50px 0}
 /* ___________________________________________________________Skills*/
 #skills{padding:50px 15px;text-align:center;border-bottom:1px solid #dcd9d9;}
 /* #skills{padding:50px 15px;text-align:center} */
-#skills h2{color:#374054;margin-bottom:50px}
-.ul-label-skill{
-    font-size: 1.3em;
-    margin: 0;
-    color: #374054;
-    font-weight: 399;
-    text-align: left;
-    padding-left: 50px;}
+#skills h2{color:#374054;margin-bottom:30px}
 #skills ul{display:block;
     margin:0 auto;
     padding:0;
     max-width:800px;
     /* font-size:1.1em */}
+.ul-label-skill{
+    font-size: 1.3em;
+    margin: 0;
+    color: #374054;
+    font-weight: 399;
+    /* text-align: left; */
+    padding-left: 0px;}
 #skills li{ /* for the NEUROimAGING SKILSL  */
     /* display:inline-block; */
     margin:0px;
@@ -335,10 +335,10 @@ footer{padding:50px 0}
     display:inline-block;
     /* margin:7px;
     padding:5px 10px; */
-    color:#374054;
-    background:#e4e4ea;
-    list-style:none;
-    cursor:default;}
+    color: #374054;
+    background: #e4e4ea;
+    list-style: none;
+    cursor: default;}
 
 
 
