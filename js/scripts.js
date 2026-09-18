@@ -1,121 +1,172 @@
 /*!
-    Title: Dev Portfolio Template
-    Version: 1.2.2
-    Last Change: 03/25/2020
-    Author: Ryan Fitzgerald
-    Repo: https://github.com/RyanFitzgerald/devportfolio-template
-    Issues: https://github.com/RyanFitzgerald/devportfolio-template/issues
+    Hassan Al-Hayawi — Personal Portfolio
+    https://github.com/Hassan9001/Hassan9001.github.io
 
-    Description: This file contains all the scripts associated with the single-page
-    portfolio website.
+    Interaction layer: theme, navigation, active-section tracking, scroll reveal.
+    Vanilla JS, no dependencies.
 */
 
-(function($) {
+(function () {
+    'use strict';
 
-    // Remove no-js class
-    $('html').removeClass('no-js');
+    var root = document.documentElement;
 
-    // Animate to section when nav is clicked
-    $('header a').click(function(e) {
+    /* ---------- Theme ---------- */
 
-        // Treat as normal link if no-scroll class
-        if ($(this).hasClass('no-scroll')) return;
+    var themeToggle = document.getElementById('theme-toggle');
 
-        e.preventDefault();
+    function currentTheme() {
+        var set = root.getAttribute('data-theme');
+        if (set === 'light' || set === 'dark') return set;
+        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
 
-        var heading = $(this).attr('href');
-        var $target = $(heading);
+    function syncThemeLabel() {
+        if (!themeToggle) return;
+        var next = currentTheme() === 'dark' ? 'light' : 'dark';
+        themeToggle.setAttribute('aria-label', 'Switch to ' + next + ' theme');
+    }
 
-        if (!$target.length) return;
+    if (themeToggle) {
+        themeToggle.addEventListener('click', function () {
+            var next = currentTheme() === 'dark' ? 'light' : 'dark';
+            root.setAttribute('data-theme', next);
+            try { localStorage.setItem('theme', next); } catch (e) {}
+            syncThemeLabel();
+        });
+        syncThemeLabel();
+    }
 
-        var isMobile = window.innerWidth <= 768;
-        var headerHeight = $('header').outerHeight() || 0;
-        var scrollDistance = $target.offset().top;
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', syncThemeLabel);
 
-        // On desktop, account for fixed header
-        if (!isMobile) {
-            scrollDistance = scrollDistance - headerHeight;
-        }
+    /* ---------- Mobile navigation ---------- */
 
-        // Stop any previous scroll animation first
-        $('html, body').stop(true, true);
+    var navToggle = document.getElementById('nav-toggle');
+    var navList = document.getElementById('nav-list');
+    // The open menu covers the page, so everything behind it is taken out of the
+    // tab order and the accessibility tree rather than left reachable but hidden.
+    var behindNav = [document.getElementById('main'), document.querySelector('.site-footer')]
+        .filter(Boolean);
 
-        // Close mobile menu BEFORE scrolling
-        if ($('header').hasClass('active')) {
-            $('header, body').removeClass('active');
+    function setNavOpen(open) {
+        if (!navList || !navToggle) return;
+        navList.classList.toggle('is-open', open);
+        navToggle.setAttribute('aria-expanded', String(open));
+        navToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+        document.body.classList.toggle('is-locked', open);
+        behindNav.forEach(function (el) { el.inert = open; });
+    }
 
-            // let layout settle after menu closes, then scroll
-            setTimeout(function () {
-                $('html, body').animate({
-                    scrollTop: scrollDistance
-                }, 600);
-            }, 50);
-        } else {
-            $('html, body').animate({
-                scrollTop: scrollDistance
-            }, 600);
-        }
-    });
+    function closeNav() { setNavOpen(false); }
 
-    // Scroll to top
-    $('#to-top').click(function() {
-        $('html, body').animate({
-            scrollTop: 0
-        }, 500);
-    });
-
-    // Scroll to first element
-    $('#lead-down span').click(function() {
-        var scrollDistance = $('#lead').next().offset().top;
-        $('html, body').animate({
-            scrollTop: scrollDistance + 'px'
-        }, 500);
-    });
-
-    // Create timeline
-    $('#experience-timeline').each(function() {
-
-        $this = $(this); // Store reference to this
-        $userContent = $this.children('div'); // user content
-
-        // Create each timeline block
-        $userContent.each(function() {
-            $(this).addClass('vtimeline-content').wrap('<div class="vtimeline-point"><div class="vtimeline-block"></div></div>');
+    if (navToggle && navList) {
+        navToggle.addEventListener('click', function () {
+            setNavOpen(!navList.classList.contains('is-open'));
         });
 
-        // Add icons to each block
-        $this.find('.vtimeline-point').each(function() {
-            $(this).prepend('<div class="vtimeline-icon"><i class="fa fa-map-marker"></i></div>');
+        navList.addEventListener('click', function (e) {
+            if (e.target.closest('a')) closeNav();
         });
 
-        // Add dates to the timeline if exists
-        $this.find('.vtimeline-content').each(function() {
-            var date = $(this).data('date');
-            if (date) { // Prepend if exists
-                $(this).parent().prepend('<span class="vtimeline-date">'+date+'</span>');
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape' && navList.classList.contains('is-open')) {
+                closeNav();
+                navToggle.focus();
             }
         });
 
-    });
-
-    // Open mobile menu
-    $('#mobile-menu-open').click(function() {
-        $('html, body').stop(true, true);
-        $('header, body').addClass('active');
-        $('header').removeClass('nav-hidden');
-    });
-
-    // Close mobile menu
-    $('#mobile-menu-close').click(function() {
-        $('header, body').removeClass('active');
-    });
-
-    // Load additional projects
-    $('#view-more-projects').click(function(e){
-        e.preventDefault();
-        $(this).fadeOut(300, function() {
-            $('#more-projects').fadeIn(300);
+        window.addEventListener('resize', function () {
+            if (window.innerWidth > 940) closeNav();
         });
-    });
+    }
 
-})(jQuery);
+    /* ---------- Header: shadow at the top edge, hide on scroll down ---------- */
+
+    var header = document.getElementById('site-header');
+
+    if (header) {
+        var lastY = window.scrollY;
+        var ticking = false;
+
+        var onScroll = function () {
+            var y = window.scrollY;
+
+            header.classList.toggle('is-stuck', y > 8);
+
+            var menuOpen = navList && navList.classList.contains('is-open');
+            if (!menuOpen && y > 200 && y > lastY + 6) {
+                header.classList.add('is-hidden');
+            } else if (y < lastY - 6 || y <= 200) {
+                header.classList.remove('is-hidden');
+            }
+
+            lastY = y;
+            ticking = false;
+        };
+
+        window.addEventListener('scroll', function () {
+            if (!ticking) {
+                ticking = true;
+                window.requestAnimationFrame(onScroll);
+            }
+        }, { passive: true });
+
+        onScroll();
+    }
+
+    /* ---------- Active section in the nav ---------- */
+
+    var links = Array.prototype.slice.call(document.querySelectorAll('.nav__link'));
+    var sections = links
+        .map(function (a) { return document.querySelector(a.getAttribute('href')); })
+        .filter(Boolean);
+
+    if ('IntersectionObserver' in window && sections.length) {
+        var visible = new Set();
+
+        var spy = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) visible.add(entry.target.id);
+                else visible.delete(entry.target.id);
+            });
+
+            var active = null;
+            for (var i = 0; i < sections.length; i++) {
+                if (visible.has(sections[i].id)) { active = sections[i].id; break; }
+            }
+
+            links.forEach(function (a) {
+                if (active && a.getAttribute('href') === '#' + active) {
+                    a.setAttribute('aria-current', 'true');
+                } else {
+                    a.removeAttribute('aria-current');
+                }
+            });
+        }, { rootMargin: '-25% 0px -60% 0px', threshold: 0 });
+
+        sections.forEach(function (s) { spy.observe(s); });
+    }
+
+    /* ---------- Scroll reveal ---------- */
+
+    var revealables = document.querySelectorAll('.reveal');
+
+    if (root.classList.contains('js-reveal')) {
+        var revealer = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (!entry.isIntersecting) return;
+                entry.target.classList.add('is-visible');
+                revealer.unobserve(entry.target);
+            });
+        }, { rootMargin: '0px 0px -8% 0px', threshold: 0.04 });
+
+        revealables.forEach(function (el) { revealer.observe(el); });
+    }
+    // Otherwise the head script left .js-reveal off and the sections are already visible.
+
+    /* ---------- Footer year ---------- */
+
+    var year = document.getElementById('year');
+    if (year) year.textContent = String(new Date().getFullYear());
+
+})();

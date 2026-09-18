@@ -1,623 +1,807 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en">
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Hassan Al-Hayawi</title>
-	<link rel="shortcut icon" href="images/profile.ico" type="image/x-icon">
-	<link rel="icon" href="images/profile.ico" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
-    <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <title>Hassan Al-Hayawi — Data Scientist &amp; AI Solutions Specialist</title>
+    <meta name="description" content="Hassan Al-Hayawi builds machine-learning and AI systems for healthcare, research and industry — deep learning for medical imaging, neuroimaging analysis, and applied AI automation. Toronto, Canada.">
+    <meta name="author" content="Hassan Al-Hayawi">
+    <meta name="theme-color" content="#faf9f7" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#131417" media="(prefers-color-scheme: dark)">
+
+    <meta property="og:type" content="profile">
+    <meta property="og:title" content="Hassan Al-Hayawi — Data Scientist &amp; AI Solutions Specialist">
+    <meta property="og:description" content="Machine learning and AI systems for healthcare, research and industry.">
+    <meta property="og:url" content="https://hassan9001.github.io/">
+    <meta property="og:image" content="https://hassan9001.github.io/images/headshot.png">
+    <meta name="twitter:card" content="summary">
+
+    <link rel="canonical" href="https://hassan9001.github.io/">
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+    <link rel="alternate icon" href="images/favicon.ico" sizes="any">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
+
     <link href="css/styles.css" rel="stylesheet">
+
+    <script>
+        // Runs before first paint: applies the stored theme, and arms the scroll
+        // reveal only when the browser can actually drive it. Without this class the
+        // sections simply render visible, so a failed script never blanks the page.
+        (function () {
+            var el = document.documentElement;
+            try {
+                var t = localStorage.getItem('theme');
+                if (t === 'light' || t === 'dark') el.setAttribute('data-theme', t);
+            } catch (e) {}
+            if ('IntersectionObserver' in window &&
+                !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                el.classList.add('js-reveal');
+            }
+        })();
+    </script>
 </head>
 
 <body>
-    <div id="mobile-menu-open" class="shadow-large">
-        <i class="fa fa-bars" aria-hidden="true"></i></div>
-    <!-- End #mobile-menu-toggle -->
+    <a class="skip-link" href="#main">Skip to content</a>
 
-    <header>
-        <div id="mobile-menu-close">
-            <span>Close</span> <i class="fa fa-times" aria-hidden="true"></i>
+    <!-- ========== HEADER ========== -->
+    <header class="site-header" id="site-header">
+        <div class="wrap">
+            <a class="brand" href="#lead">
+                <span class="brand__mark" aria-hidden="true">HA</span>
+                <span>Hassan Al-Hayawi</span>
+            </a>
+
+            <nav class="nav" aria-label="Sections">
+                <ul class="nav__list" id="nav-list">
+                    <li><a class="nav__link" href="#about">About</a></li>
+                    <li><a class="nav__link" href="#education">Education</a></li>
+                    <li><a class="nav__link" href="#experience">Experience</a></li>
+                    <li><a class="nav__link" href="#skills">Skills</a></li>
+                    <li><a class="nav__link" href="#projects">Projects</a></li>
+                    <li><a class="nav__link" href="#awards">Awards</a></li>
+                    <li><a class="nav__link" href="#pubs">Publications</a></li>
+                    <li><a class="nav__link" href="#contact">Contact</a></li>
+                </ul>
+
+                <button class="icon-btn theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark theme">
+                    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
+                        <circle cx="12" cy="12" r="4.2"/>
+                        <path d="M12 2.5v2.2M12 19.3v2.2M4.2 4.2l1.6 1.6M18.2 18.2l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.2 19.8l1.6-1.6M18.2 5.8l1.6-1.6"/>
+                    </svg>
+                    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M20.5 14.3A8.6 8.6 0 0 1 9.7 3.5a8.6 8.6 0 1 0 10.8 10.8Z"/>
+                    </svg>
+                </button>
+
+                <button class="icon-btn nav-toggle" id="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-list">
+                    <svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
+                        <path d="M3.5 7h17M3.5 12h17M3.5 17h17"/>
+                    </svg>
+                </button>
+            </nav>
         </div>
-        <ul id="menu" class="shadow">
-            <li><a href="#lead">Home</a></li>  
-            <li><a href="#about">About</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#experience">Experience</a></li> 
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>         
-            <li><a href="#awards">Awards</a></li> 
-            <li><a href="#pubs">Publications</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
     </header>
-    <!-- End header -->
 
+    <main id="main">
 
-<!-- ______ Lead = HEADER BANNER CONTENT ______  -->
-    <div id="lead">
-    <!-- lead-content -->
-        <div id="lead-content">
-            <h1>Hassan Al-Hayawi</h1>
-            <h2>Data Scientist &amp; AI Solutions Specialist</h2>
-            <!-- <h3>Canadian <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/Flag_of_Canada.svg" alt="Canadian Flag"></h3> -->
-            <a href="https://raw.githubusercontent.com/Hassan9001/Hassan9001.github.io/main/assets/CV_Hassan%20Al-Hayawi.pdf" class="btn-rounded-white">Download CV</a>
-            <a href="https://raw.githubusercontent.com/Hassan9001/Hassan9001.github.io/main/assets/Resume_Hassan%20Al-Hayawi.pdf" class="btn-rounded-white">or Download 1pg Resume</a>
-        </div>
-        <div id="lead-overlay"></div>
-    <!-- lead-down -->
-        <div id="lead-down">
-            <span>
-                <i class="fa fa-chevron-down" aria-hidden="true"></i>
-            </span>
-        </div>
-    </div>
+        <!-- ========== HERO ========== -->
+        <section id="lead">
+            <div class="wrap">
+                <p class="lead__eyebrow">Data Scientist &amp; AI Solutions Specialist — Toronto, Canada</p>
 
+                <h1 class="lead__name">Hassan Al-Hayawi</h1>
 
+                <p class="lead__statement">
+                    I build machine-learning and AI systems that hold up <b>outside the lab</b> — in hospitals,
+                    in research, and in the businesses that run on them.
+                </p>
 
-<!-- ______________ABOUT ME______________ -->
-    <div id="about" class="background-alt">
-        <div class="container">
-            <div class="col-md-4"><h2 class="heading">About Me</h2></div>
-            <div class="row">
-                <div class="col-xs-12 col-sm-4 col-md-3 no-print">
-                    <span class="profile-img" style="background-image: url(images/profile.png)">
-                    <!-- <img src="images/profile.png" alt="Profile Image" class="profile-image"> -->
-                    </span></div>
-                <div class="col"><!-- </div>"col-xs-12 col-sm-8 col-md-9 col-print-12"-->
-                    </br>
-                    <p>• I work at the intersection of AI, business, and technology, helping teams identify where AI and automation can improve workflows and solve practical problems.</p>
-                    </br>
-                    <p>• My background is also highly technical, with experience developing AI agents, machine-learning models, deep-learning systems, and computer-vision solutions across industry, healthcare, and research settings.</p>
-                    </br>
-                    <p>• I enjoy combining client-facing problem-solving, process improvement, and technical AI expertise to help organizations make better use of emerging technologies.</p>
-                    </br>
-                    <p>• <strong>Machine Learning Experience:</strong> Across various projects I manage end-to-end machine learning pipelines, encompassing data processing, feature engineering, model development, model evaluation, and the deployment of scalable models in an operational environment.</p>
-                    </br>
-                    <p>• <strong>Background in Neuroimaging:</strong> Led multiple projects involving the collection, formatting, preprocessing, and analysis of MRI, fMRI, fNIRS, and EEG data, developing ML models to improve prognostic capabilities in critical care settings and derive data-driven patient health insights.</p>
-                    </br>
-                    <!-- <p>• I have deep knowledge of machine learning frameworks such as PyTorch and TensorFlow</p> -->
+                <div class="lead__actions">
+                    <a class="btn" href="https://raw.githubusercontent.com/Hassan9001/Hassan9001.github.io/main/assets/CV_Hassan%20Al-Hayawi.pdf" target="_blank" rel="noopener">
+                        <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M12 3.5v12M7.5 11.5 12 16l4.5-4.5M4.5 19.5h15"/>
+                        </svg>
+                        Download CV
+                    </a>
+                    <a class="btn btn--ghost" href="https://raw.githubusercontent.com/Hassan9001/Hassan9001.github.io/main/assets/Resume_Hassan%20Al-Hayawi.pdf" target="_blank" rel="noopener">
+                        <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M12 3.5v12M7.5 11.5 12 16l4.5-4.5M4.5 19.5h15"/>
+                        </svg>
+                        One-page resume
+                    </a>
+                </div>
+
+        </section>
+
+        <!-- ========== ABOUT ========== -->
+        <section class="section" id="about">
+            <div class="wrap section__inner">
+                <div class="section__head">
+                    <div class="section__label">
+                        <span class="section__index">01</span>
+                        <h2 class="section__title">About</h2>
+                        <figure class="about__portrait">
+                            <picture>
+                                <source srcset="images/headshot.webp" type="image/webp">
+                                <img src="images/headshot.png" width="800" height="779" alt="Portrait of Hassan Al-Hayawi" loading="lazy" decoding="async">
+                            </picture>
+                        </figure>
+                    </div>
+                </div>
+
+                <div class="section__body reveal">
+                    <div class="about">
+                        <div class="prose">
+                            <p>I work at the intersection of AI, business, and technology — helping teams find where
+                                AI and automation genuinely improve a workflow, then building the thing that does it.</p>
+                            <p>My background is deeply technical: AI agents, machine-learning models, deep-learning
+                                systems, and computer-vision solutions delivered across industry, healthcare, and research.</p>
+                            <p>Across projects I own the end-to-end pipeline — data processing, feature engineering,
+                                model development, evaluation, and deployment of scalable models into operational
+                                environments.</p>
+                            <p>In neuroimaging I have led the collection, formatting, preprocessing, and analysis of MRI,
+                                fMRI, fNIRS, and EEG data, building models that improve prognostic capability in critical
+                                care and surface data-driven patient insight.</p>
+                        </div>
+
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-    <!-- <div id="about" class="background-alt">
-        <div class="container">
-            <div class="col-md-4"><h2 class="heading">About Me</h2></div>
-            <div class="row1">
-                <div class="left-item"><img class="profile-image" src="images/profile.png" alt="Profile Image" ></div>
-                <div class="col-md-8">
-                    </br>
-                    <p>• My work experience has equipped me with robust research skills, particularly in statistics, machine learning, and analysis of large neuroimaging datasets for multiple imaging modalities.</p>
-                    </br>
-                    <p>• My machine learning skills are highlighted through various projects in which I manage end-to-end ML pipelines, develop and evaluate models, process and analyze data for cleaning and feature engineering, etc.</p>
-                    </br>
-                    <p>• I have Deep knowledge of machine learning frameworks such as PyTorch and TensorFlow</p>
+        </section>
+
+        <!-- ========== EDUCATION ========== -->
+        <section class="section" id="education">
+            <div class="wrap section__inner">
+                <div class="section__head">
+                    <div class="section__label">                        <span class="section__index">02</span>
+                        <h2 class="section__title">Education</h2>
+                    </div>
+                </div>
+
+                <div class="section__body reveal">
+                    <div class="with-figure">
+                    <div class="entries">
+                        <article class="entry entry--card">
+                            <div class="entry__meta">
+                                <span>Sept 2022 — Aug 2024</span>
+                                <span>London, ON</span>
+                            </div>
+                            <div class="entry__body">
+                                <h3 class="entry__title">M.Sc. — Cognitive, Developmental and Brain Sciences</h3>
+                                <p class="entry__org">
+                                    <img src="images/western_logo.jpg" width="100" height="100" alt="" loading="lazy" decoding="async">
+                                    University of Western Ontario
+                                </p>
+                                <ul class="entry__points">
+                                    <li>Thesis: <em>Machine Learning for Prognosis of Acute Brain-Injured Patients in the
+                                        ICU Using EEG Complexity Analysis and Naturalistic Narrative Stimuli</em></li>
+                                    <li>Supervisors: Dr. Adrian Owen &amp; Dr. Derek Debicki</li>
+                                </ul>
+                                <p class="project__links">
+                                    <a href="https://uwo.scholaris.ca/server/api/core/bitstreams/2a7ec879-25a1-49a3-918d-df9013f587c3/content" target="_blank" rel="noopener">
+                                        Read the thesis
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+                                    </a>
+                                </p>
+                            </div>
+                        </article>
+
+                        <article class="entry entry--card">
+                            <div class="entry__meta">
+                                <span>Sept 2018 — Apr 2022</span>
+                                <span>London, ON</span>
+                            </div>
+                            <div class="entry__body">
+                                <h3 class="entry__title">B.A. — Honours Specialization in Psychology</h3>
+                                <p class="entry__org">
+                                    <img src="images/kings_logo.jpg" width="100" height="100" alt="" loading="lazy" decoding="async">
+                                    King’s University College
+                                </p>
+                                <ul class="entry__points">
+                                    <li>Thesis: <em>Cortical Function of Super Refractory Status Epilepticus: An fMRI
+                                        Case Study</em></li>
+                                    <li>Supervisor: Dr. Loretta Norton</li>
+                                </ul>
+                            </div>
+                        </article>
+                    </div>
+                    <figure class="side-figure">
+                        <picture>
+                            <source srcset="images/diploma_black.webp" type="image/webp">
+                            <img src="images/diploma_black.png" width="800" height="1002" alt="Hassan Al-Hayawi in convocation robes holding his University of Western Ontario degree" loading="lazy" decoding="async">
+                        </picture>
+                    </figure>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>     -->
+        </section>
 
-
-
-
-<!-- ______________EDUCATION______________ -->
-   <div id="education">
-        <h2 class="heading">Education </h2>
-        <div class="diploma-img">
-            <img src="images/diploma_black.png" alt="diploma" title="diploma" style="width:350px; height:auto"/>
-            <!-- <span class="diploma-img" style="background-image: url(images/diploma_black_cropped.png)"></span> --></div>           
-        <div class="education-block">
-            <h3><img src="images/western_logo.jpg" alt="Western Logo" class="western_logo" style="width:35px; height:auto">  University of Western Ontario</h3>
-            <span class="education-date">London, ON., Canada | Sept. 2022 - Aug. 2024</span>
-            <h4>M.Sc. - Cognitive, Developmental and Brain Sciences</h4>
-            <p>• Thesis title: “<em>Machine Learning for Prognosis of Acute Brain-Injured Patients in the ICU Using EEG Complexity Analysis and Naturalistic Narrative Stimuli</em>”</p>
-            <a href="https://uwo.scholaris.ca/server/api/core/bitstreams/2a7ec879-25a1-49a3-918d-df9013f587c3/content" target="_blank">| View Thesis |</a>
-            <p>• Supervisors: Dr. Adrian Owen & Dr. Derek Debicki </p></div>
-        <div class="education-block">
-            <h3><img src="images/kings_logo.jpg" alt="Kings Logo" class="kings_logo" style="width:35px; height:auto">  King’s University College</h3>
-            <span class="education-date">London, ON., Canada | Sept. 2018 - Apr. 2022</span>
-            <h4>B.A. - Honours Specialization in Psychology</h4>
-            <p>• Thesis title: “<em>Cortical Function of Super Refractory Status Epilepticus: An fMRI Case Study</em>”</p>
-            <p>• Supervisor: Dr. Loretta Norton</p></div></div>
-
-
-
-
-<!-- ______________EXPERIENCE______________ -->
-    <div id="experience" class="background-alt">
-        <h2 class="heading">Experience</h2>
-        <div id="experience-timeline">
-
-            <div data-date="March 2026 – Present">
-                <h3>AI Execution and Program Specialist</h3>
-                <span>Toronto, ON., Canada</span>
-                <h4>Techify Inc.</h4>
-                <ul>
-                    <li>Work with client teams to understand workflows, identify opportunities for AI and automation, and recommend practical solutions.</li>
-                    <li>Build and implement custom AI agents and workflow automations, support user training, and track adoption and effectiveness over time.</li>
-                </ul>
-                <p>Skills: <em>AI Agents · Workflow Automation · Solution Design · Client Enablement · Adoption Tracking</em></p>
-            </div>
-
-            <div data-date="September 2025 – February 2026">
-                <h3>Technical AI Researcher</h3>
-                <span>Toronto, ON., Canada</span>
-                <h4>M31 AI (startup)</h4>
-                <ul>
-                    <li>Designed and executed large-scale GPU-accelerated experiments on HPC infrastructure.</li>
-                    <li>Development of medical imaging ML workflows and deep learning architectures for 3D MRI analysis.</li>
-                    <li>Predicting AVM recurrence in pediatric patients as part of a collaboration with the SickKids Hospital.</li>
-                </ul>
-                <p>Skills: <em>Deep Learning · Neural Networks (ResNet & Transformer based models)</em></p>
-            </div>
-
-            <div data-date="January 2025 – September 2025">
-                <h3>Machine Learning Research Assistant</h3>
-                <span>London, ON., Canada</span>
-                <h4>The Haeryfar Lab</h4>
-                <ul>
-                    <li>Implement and refine a transfer learning–based convolutional neural network to fully automate the detection and scoring of liver inflammation and fibrosis in histology slides of a preclinical mouse model.</li>
-                    <li>Leverage automated patch-based classification to replace labor-intensive manual scoring, increasing speed and consistency in histopathological evaluation of liver tissue. </li>
-                </ul>
-                <p>Skills: <em>CNN · Histology data · Pathophysiology</em></p>
-            </div>
-
-            <div data-date="September 2022 – December 2024">
-                <h3>Research Analyst</h3>
-                <span>London, ON., Canada</span>
-                <h4>LHSC - London Health Sciences Centre</h4> <!-- <h4>Center for Brain & Mind</h4> -->
-                <ul>
-                    <li>Investigated temporal brain patterns in critical care patients using time-series data from various functional neuroimaging modalities, such as <abbr title="Functional Near-Infrared Spectroscopy">fNIRS</abbr>, <abbr title="Functional Magnetic Resonance Imaging">fMRI</abbr>, & <abbr title="Electroencephalography">EEG</abbr>.</li>
-                    <li>Made data-driven insights with machine learning techniques to enhance prognostic and diagnostic capabilities in the <abbr title="Intensive Care Unit">ICU</abbr>.</li>
-                </ul>
-                <p>Skills: <em>Quantitative Research · Deep Learning · Statistics · Machine Learning · Feature Engineering · Functional Neuroimaging</em></p>
-            </div>
-
-            <div data-date="October 2021 - August 2022">
-                <h3>Data Analyst</h3>
-                <span>London, ON., Canada</span>
-                <h4>The Owen Lab</h4>
-                <ul>
-                    <li>Statistical Data Analyst for lab research.</li>
-                    <li>Preprocessed & analyzed large high-dimensional datasets with advanced techniques for noise reduction, artifact removal, signal enhancement, statistical testing, optimization algorithms, feature extraction, & data visualization.</li>
-                    <li>Utilized PCA for dimensionality reduction & ICA to eliminate artifacts & isolate meaningful patterns in the data. </li>
-                </ul>
-                <p>Skills: <em>Data Processing · Advanced Statistical Methods · Machine Learning · Optimization · Research Skills</em></p>
-            </div>
-
-            <div data-date="September 2022 - May 2024">
-                <h3>Teaching Assistant</h3>
-                <span>London, ON., Canada</span>
-                <h4>Western University</h4>
-                <ul>
-                    <li>Independently led tutorials for the following courses: Research Methods in Psychology (PSYCH 2801); Psychology as a Social Science (PSYCH 1003); Psychology as a Natural Science (PSYCH 1002).</li>
-                    <li>Instructed students to work with data, conduct and test hypotheses, and visualize and interpret data effectively.</li>
-                    <li>Collaborated with the course coordinator to align teaching and marking strategies with course objectives.</li>
-                    <li>Organized and moderated online discussion forums, facilitating peer-to-peer knowledge sharing and collaborative learning.</li>
-                </ul>
-                <p>Skills: <em>University Teaching · Fundamental Research Skills</em></p>          
-            </div>
-            <div data-date="October 2020 – December 2021 ">
-                <h3>Best Buy</h3>
-                <span>London, ON., Canada</span>
-                <h4>Advanced Repair Agent</h4>
-                <ul>
-                    <li>Documented and fixed issues with client laptops and desktop computers.</li>
-                    <li>Maintained record of daily data communication transactions, problems and remedial actions taken, and installation activities.</li>
-                    <li>Trained users in the proper use of hardware and/or software.</li>
-                </ul>
-                <p>Skills: <em>Problem-solving · Technical Skills · Customer Service · Documentation</em></p>
-                    <!-- Quickly solve and find effective solutions to complex problems in a fast paces technology oriented environment. Document and fix issues that appear throughout client laptops and desktop computers. Maintained records of daily data communication transactions, problems and remedial actions taken or installation activities. Created service tags and send out client computers and store computer to service centers.  Developed training materials and procedures. Trained users in the proper use of hardware and/or software.  -->
-                    <!-- Mobile Specialist: Provide world class service to while analyzing mobile accounts. Setting up and diagnosing common mobile device issues.  Selling services related to mobile carriers and reading customers to expertly find them their perfect product. High pace environment at times requiring lots of concentration and patience.                 -->
-                
-            </div>
-            <div data-date="March 2018 – January 2020">
-                <h3>Kognitive Sales Solutions</h3>
-                <span>Windsor, ON., Canada</span>
-                <h4>Team Lead & Field Marketing Representative</h4>
-                <ul>
-                    <li>Led a high-performing sales team during promotional events, driving product visibility and customer engagement.</li>
-                    <li>Initially hired as a Field Marketing Representative, exceeded sales targets, and was promoted to Team Lead.</li>
-                    <li>Achieved recognition for consistently ranking at the top of the leaderboard for most sales, demonstrating exceptional sales skills and a commitment to team success.</li>
-                </ul>
-                <p>Skills: <em>Leadership · Collaboration · Customer Service · Sales</em></p>
-                <!-- <p>Leading the sales team during promotional events.
-                    </br>My sales experience has been recognized through awards and consistently placing at the top of the leaderboard for most daily sales.
-                    </br>Skills: Leadership · Collaboration · Customer Service · Sales
-                </p> -->
-            </div>
-
-        </div>
-    </div>
-
-
-
-<!-- ______________SKILLS______________ -->
-    <div id="skills">
-        <h2 class="heading">Skills</h2>
-        <ul><p class="ul-label-skill">Code & Software:      
-        <!-- <ul> Programming/Coding: -->
-            <li class="li-label-skill">Python</li>
-            <!-- <li class="li-label-skill">(pandas, numpy, seaborn, matplotlib) </li> -->
-            <li class="li-label-skill">Linux</li>
-            <li class="li-label-skill">PySpark</li>
-            <li class="li-label-skill">SQL</li>
-            <li class="li-label-skill">SPSS</li>
-            <li class="li-label-skill">R</li>
-            <li class="li-label-skill">MATLAB</li>
-            <li class="li-label-skill">BASH</li>
-            <li class="li-label-skill">HTML & CSS</li>
-            <li class="li-label-skill">pandas</li> 
-            <li class="li-label-skill">numpy</li>
-            <li class="li-label-skill">seaborn</li>
-            <li class="li-label-skill">matplotlib</li>
-            </ul></p>  
-        <ul><p class="ul-label-skill">Machine Learning & AI:
-        <!-- <ul> Machine learning: -->
-            <li class="li-label-skill">TensorFlow</li>
-            <li class="li-label-skill">Keras</li>
-            <li class="li-label-skill">Scikit-learn</li>
-            <li class="li-label-skill">PyTorch</li>
-            <li class="li-label-skill">(Un)Supervised Learning</li>
-            <li class="li-label-skill">Convolutional Neural Networks (CNN)</li>
-            <li class="li-label-skill">ANN</li>
-            <li class="li-label-skill">LLM</li>
-            <li class="li-label-skill">Transformer-based models</li>
-            <li class="li-label-skill">Feature Engineering</li> 
-            <li class="li-label-skill">Model Optimization</li>
-            <li class="li-label-skill">Google Cloud Platform (GCP)</li>
-            <li class="li-label-skill">MLOps with Azure</li>
-            </ul></p>
-        <ul><p class="ul-label-skill">Research Methodology:
-        <!-- <ul> Research methodology: -->
-            <li class="li-label-skill">Quantitative and qualitative statistic analysis</li>
-            <li class="li-label-skill">Experimental design</li>
-            <li class="li-label-skill">Project planning & execution</li>
-            <li class="li-label-skill">Problem-solving & troubleshooting</li>
-            <li class="li-label-skill">Data interpretation</li>
-            </ul></p>
-        <ul><p class="ul-label-skill">Medical & Neuroimaging Modalities:
-        <!-- <ul><p class="ul-label-skill">Neuroimaging Data (Collection, Formatting, Cleaning, Preprocessing, & Advanced Analysis):</p> -->
-        <!-- <ul> Neuroimaging Data (Collection, Formatting, Cleaning, Preprocessing, & Advanced Analysis): -->
-            <li class="li-label-skill">Electroencephalogram (EEG)</li>
-            <li class="li-label-skill">Magnetic Resonance Imaging (MRI)</li>
-            <li class="li-label-skill">Functional Magnetic Resonance Imaging (fMRI)</li>
-            <li class="li-label-skill">Functional Near-Infrared Spectroscopy (fNIRS)</li>
-            <li class="li-label-skill">Computed Tomography (CT)</li>
-            <li class="li-label-skill">X-Ray</li>
-            </ul></p>
-    </div>
-
-
-<!-- ______________Projects______________ -->
-    <div id="projects" class="background-alt">
-        <h2 class="heading">Projects</h2>
-        <div class="container">
-            <div class="row">
-
-                <div class="project shadow-large">
-                    <div class="project-image">
-                        <img src="images/proj_logo_AVM.png" alt="Journal of Neurosurgery: Pediatrics title page — Deep learning prediction of bAVM recurrence after microsurgical resection in children" style="width:300px; height:auto"/>
+        <!-- ========== EXPERIENCE ========== -->
+        <section class="section" id="experience">
+            <div class="wrap section__inner">
+                <div class="section__head">
+                    <div class="section__label">                        <span class="section__index">03</span>
+                        <h2 class="section__title">Experience</h2>
+                        <p class="section__note">Applied AI, medical imaging, and neuroimaging research.</p>
                     </div>
-                    <!-- End .project-image -->
-                    <div class="project-info">
-                        <h4>Deep Learning for Pediatric Brain AVM Recurrence (project with the Hospital for Sick Children)</h4>
-                        <p>• Objective: Classify and predict arteriovenous malformation (AVM) recurrence after microsurgical resection from routine clinical MRI (T1c, TOF-MRA) in a cohort of 120 children.</p>
-                        <p>• Model: Developed 3D deep learning models, benchmarking a self-supervised pretrained ResNet foundation model against ViT, SwinViT, DenseNet, and SEResNet baselines.</p>
-                        <p>• Achieved a patient-level AUROC of 0.80 under 11-fold cross-validation, with Grad-CAM interpretability to highlight the imaging regions driving each prediction.</p>
-                        <p>• Manuscript in revision at <em>Journal of Neurosurgery: Pediatrics</em>.</p>
-                        <!-- <a href="https://github.com/Hassan9001/Prognosis_of_ICU_Patients_with_EEG_Complexity" target="_blank">View Project</a> -->
-                    </div>
-                    <!-- End .project-info -->
                 </div>
-                <!-- End .project -->
 
-                <div class="project shadow-large">
-                    <div class="project-image">
-                        <img src="images/proj_logo_Xray.png" style="width:300px; height:auto"/>
-                    </div>
-                    <!-- End .project-image -->
-                    <div class="project-info">
-                        <!-- <h3>(update coming soon)</h3> -->
-                        <h4>CNN for Binary Image Classification (Computer Vision)</h4>
-                        <p>• Model: Developed a model to automatically classify X-rays images of pneumonia-affected lungs, distinguishing them from normal lungs.</p>
-                        <p>• Achieved 81% accuracy and an F1 score of 83.8%.</p>
-                        <p>• Workflow: Fine-tuned a pre-trained CNN in PyTorch through data manipulation and transfer learning techniques for better classification while minimizing computational resource usage. Delivered modular scripts and clear documentation for data loading, training, and evaluation to streamline reproducibility and enable collaboration. </p>
-                        <a href="https://github.com/Hassan9001/X-Ray_Classification_with_PyTorch" target="_blank">View Project</a>
-                    </div>
-                    <!-- End .project-info -->
-                </div>
-                <!-- End .project -->
+                <div class="section__body reveal">
+                    <ol class="timeline">
 
-                <div class="project shadow-large">
-                    <div class="project-image">
-                        <img src="images/proj_logo_UNET.png" style="width:300px; height:auto"/>
-                    </div>
-                    <!-- End .project-image -->
-                    <div class="project-info">
-                        <!-- <h3>UNET</h3> -->
-                        <h4>UNET Image Segmentation of MRI Mouse Kidneys and Bladders (Computer Vision)</h4>
-                        <p>• Manual segmentation of MRI images is costly and labour-intensive; a single dataset requires months of tedious work to complete. Automating this laborious task significantly improves the workflow and efficiency of preclinical research.</p>
-                        <p>• Developed and implemented a U-NET convolutional neural network to automate MRI image segmentation for kidney and bladder volume analysis in oncological mouse models, reducing manual processing time from months to minutes while maintaining high accuracy.</p>
-                        <p>• Collaborated with immunology researchers to confirm the accuracy of the segmentation results.</p>
-                        <p>• The model consistently produced results like those obtained by experienced manual segmenters, with a mean difference of only 2-5%. Thus, the model reliably assesses cancer progression in preclinical studies.</p>
-                        <!-- <p>• Importantly, my model completed the task in mere moments compared to the months of manual human labour it usually takes.</p> -->
-                        <a href="https://github.com/Hassan9001/MRI-UNET-Image-Segmentation/blob/main/README.md" target="_blank">View Project</a>
-                    </div>
-                    <!-- End .project-info -->
-                </div>
-                <!-- End .project --> 
-
-                <div class="project shadow-large">
-                    <div class="project-image">
-                        <img src="images/proj_logo_THESIS.png" style="width:300px; height:auto"/>
-                    </div>
-                    <!-- End .project-image -->
-                    <div class="project-info">
-                        <!-- <h3>Health Care</h3> -->
-                        <h4>EEG Complexity for Prognosis of ICU Patients</h4>
-                        <p>• Used various algorithms to perform binary classification on EEG complexity features to assess ICU patient prognosis.</p>
-                        <p>• Used explainable statistical techniques to improve the transparency and interpretability of the models.</p>
-                        <p>• Evaluated model performance using cross-validation techniques and metrics, including accuracy, precision, recall, and area under the ROC curve (AUC).</p>
-                        <p>• Results showed 80% accuracy in predicting a patient's future clinical outcome using EEG recording from early ICU admission (AUC = 0.80–0.83).</p>
-                        <a href="https://uwo.scholaris.ca/server/api/core/bitstreams/2a7ec879-25a1-49a3-918d-df9013f587c3/content" target="_blank">| View Thesis |</a>
-                        <!-- <a href="https://ir.lib.uwo.ca/etd/10858" target="_blank">| View Thesis |</a> -->
-                        <a href="https://github.com/Hassan9001/Prognosis_of_ICU_Patients_with_EEG_Complexity" target="_blank">View Github |</a>
-                                                                                                    <!-- The [target="_blank"] tells the browser to open the link in a new tab or window rather than replacing the current page.-->
-                    </div>
-                    <!-- End .project-info -->
-                </div>
-                <!-- End .project -->
-
-                <div class="project shadow-large">
-                    <div class="project-image">
-                        <img src="images/montage.PNG" style="width:300px; height:auto"/>
-                    </div>
-                    <!-- End .project-image -->
-                    <div class="project-info">
-                        <!-- <h3>Modeling HRF</h3> -->
-                        <h4>Simultaneous EEG-fNIRS to Model HRF of Brain-Injured Patients</h4>
-                        <p>• Awarded a Provincial Scholarship (OGS) for my written proposal to more accurately estimate the hemodynamic response function (HRF) of patients using a gradient descent-based search algorithm that maximizes the Pearson correlation between the recorded fNIRS and EEG signals.</p>
-                        <p>• This method will vastly improve the accuracy and sensitivity of functional neuroimaging results as it accounts for important underlying physiological mechanisms.</p>
-                        <a href="https://medium.com/@hassan.alhayawi/characterization-of-the-hemodynamic-response-function-in-acute-brain-injury-patients-895ed3537e76" target="_blank">View Project</a>
-                    </div>
-                    <!-- End .project-info -->
-                </div>
-                <!-- End .project -->
-            </div>
-        </div>
-    </div>
-    <!-- End #projects -->
-    
-
-
-  <!-- ______________AWARDS______________ -->
-    <div id="awards">
-        <h2 class="heading">Awards & Distinctions</h2>
-        <div class="wrestling-img">
-            <img src="images/WrestlingTransparent_cropped2.png" alt="wrestling" title="Wrestling" style="width:350px; height:auto"/></div>         
-        <div class="awards_block">
-            <ul>
-                <!-- <p>This is <mark>highlighted</mark> text.</p> -->
-                <li>2024 Ontario Graduate Scholarship (OGS) (<strong>valued at $15,000</strong>).</li>
-                <li>2023 Reva Gerstein Fellowship (<strong>valued at $4,000</strong>).</li>
-                <li>Gold medal, 2023 Canadian National Wrestling Championships – Greco-Roman category.</li>
-                <li>Gold medal, 2023 Ontario University Athletics (OUA) Wrestling Championship.</li>
-                <li>Silver medal, at the 2023 <abbr title="University National Canadian Championships">U-Sports</abbr> Wrestling Championship.</li>
-                <li>U-Sports Academic All-Canadian Award (2019-2023) – for student-athletes who compete at the national level while maintaining high grades.</li>
-                <li>2022 Ontario Graduate Scholarship (OGS) (<strong>valued at $15,000</strong>).</li>
-                <li>2021-2022 Ontario Wrestling Carding (<strong>valued at $3,000</strong>).</li>
-                <li>Peter Lockyer Wrestling Award (2018-2022) (<strong>total value of $10,500</strong>).</li>
-                <li>King's University College Dean’s List (2019-2022).</li>
-                <li>King's University College Continuing Admission Academic Scholarship (2018-2021) (<strong>total value of $4,500</strong>).</li>
-                <li>King's University College Academic Athletic Scholarship (2018-2021) (<strong>total value of $12,500</strong>).</li>
-                <li>Gold medal, 2021 Ontario Senior Wrestling Provincial Championship.</li>
-                <li>2021 Bronze W Award presented by the University of Western Ontario’s Varsity Wrestling Team.</li>
-                <li>2019 & 2020 Most Dedicated Athlete awarded by the University of Western Ontario’s Varsity Wrestling Team.</li>
-                <li>2019 Male Rookie of the Year - awarded by the University of Western Ontario’s Varsity Wrestling Team.</li>
-                <li>2017 1st Team All-City Defensive Back, Windsor High School Football.</li>
-                <li>2017 Trophy for the 12th Annual <abbr title="Windsor/Essex Sports Person of the Year">WESPY</abbr> Awards.</li>
-                <li>2017 Most Outstanding Wrestler Trophy presented by <abbr title="Southwestern Ontario Secondary School Athletic Association">SWOSSAA</abbr>.</li>
-                <li>2017 Vincent Massey Secondary School Senior Athlete of the Year.</li>
-                <li>Gold <abbr title="Windsor Essex County Secondary School Athletic Association">WECSSAA</abbr> & <abbr title="Southwestern Ontario Secondary School Athletic Association">SWOSSAA</abbr> championships (2017 & 2018); Bronze <abbr title="The Ontario Federation of School Athletic Associations">OFSAA </abbr>championship (2018)</li>
-            </ul>
-            <!-- <div class="wrestlingimage"><img src="images/WrestlingTransparent.png" style="width:400px; height:auto"></div> --></div>
-    </div>
-
-<!-- ______________PUBLICATIONS ______________ -->
-    <div id="pubs" class="background-alt pub">
-        <h2 class="heading">Publications</h2>
-        <ul><p class="ul-label-pub">Manuscripts:</p>
-            <li><strong>Al-Hayawi H</strong>, Kim S, Ma J, Wang B, Quon J: Deep learning prediction of AVM recurrence in children.
-                <em>Journal of Neurosurgery: Pediatrics (in revision).</em></li>
-            <li>Wang X, <strong>Al-Hayawi H</strong>, Norton L, Gofton TE, Debicki DB, Slessarev M, Owen AM: Optimized Simultaneous Assessment of 
-                Subcortical and Cortical Auditory Responses Through Frequency-tagged Roving Paradigm <em>(in preparation).</em>
-                <a class="doi" href="https://doi.org/10.1111/ejn.70337" target="_blank"></a></li>
-            <li>Maschke C, Norton L, Duclos C, Dolhan K, Han M, Laforge G, Frantz A, Wang X, <strong>Al-Hayawi H</strong>, Zhang T, 
-                Lavoie R, Owen AM, Blain-Moraes S (2024). EEG response to sedation interruption complements behavioral assessment 
-                after severe brain injury. <em>Annals of Clinical and Translational Neurology.</em>
-                <a class="doi" href="https://doi.org/10.1101/2024.10.02.24314815" target="_blank"></a></li>
-            </ul>
-        <ul><p class="ul-label-pub">Conference Abstracts:</p>
-            <li><strong>Al-Hayawi H</strong>, Laforge G, Novi SL, Wang X, Debicki DB, Norton L, Owen AM: Leveraging 
-                electroencephalography and machine learning for predicting neurologic recovery after acute brain injury. <em>London 
-                Health Research Day</em>. London, Canada. May 2024.</li>
-            <li><strong>Al-Hayawi H</strong>, Laforge G, Norton L, Owen AM: Complexity Modulation with Naturalistic Narrative Stimuli for 
-                Prognosis of Acute Brain-Injured Patients. <em>Cognitive Neuroscience Society 2024 31st Annual Meeting</em>. Toronto, 
-                Canada. April 2024.</li>
-            <li><strong>Al-Hayawi H</strong>, Laforge G, Novi SL, Wang X, Debicki DB, Norton L, Owen AM: Using EEG and machine 
-                learning for predicting neurologic recovery after acute brain injury. <em>51st Annual Lake Ontario Visionary 
-                Establishment (L.O.V.E) Conference</em>. Niagara Falls, Canada. February 2024.</li>
-            <li><strong>Al-Hayawi H</strong>, Norton L, Kazazian K, Gofton TE, Owen AM: Cortical Function of Super Refractory Status 
-                Epilepticus: An fMRI Case Study. <em>London Health Research Day</em>. London, Canada. May 2022.</li></ul>
-    </div>
- 
-<!-- _____________________________________contact me________________________ -->
-    <div id="contact">
-        <h2>Get in Touch</h2>
-        <div id="contact-form">
-            <form action="https://formspree.io/f/myzzlyry" method="POST" >
-                <input type="hidden" name="_subject" value="Contact request from personal website" />
-                <input type="email" name="_replyto" placeholder="Your email" required>
-                <textarea name="message" placeholder="Your message" required></textarea>
-                <button type="submit">Send</button>
-            </form>
-        </div>
-        <!-- <div class="optional-section-block"><h3>Example optional block heading 3</h3><h4>heading 4</h4></div> -->
-    </div>
-    <!-- End #contact -->
-<!-- <element class="optional-section"><h2>Example optional block heading 2</h2></element> -->
-
-<!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-5 copyright">
-                    <p>
-                        Hassan Al-Hayawi | 519-982-7062 | Halhaya@uwo.ca
-                    </p>
-                </div>
-                <div class="col-sm-2 top">
-                    <span id="to-top">
-                        <i class="fa fa-chevron-up" aria-hidden="true"></i>
-                    </span>
-                </div>
-                <div class="col-sm-5 social">
-                    <ul>
-                        <li>
-                            <a href="https://github.com/Hassan9001" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a> 
-                            <!-- https://github.com/jsmolucha - see how he made his github profile -->
+                        <li class="tl-item is-current">
+                            <div class="entry__meta tl-meta">
+                                <span class="is-current">Mar 2026 — Present</span>
+                                <span>Toronto, ON</span>
+                            </div>
+                            <div class="tl-node" aria-hidden="true"></div>
+                            <div class="entry__body tl-card">
+                                <h3 class="entry__title">AI Execution and Program Specialist</h3>
+                                <p class="entry__org">Techify Inc.</p>
+                                <ul class="entry__points">
+                                    <li>Work with client teams to understand workflows, identify opportunities for AI and
+                                        automation, and recommend practical solutions.</li>
+                                    <li>Build and implement custom AI agents and workflow automations, support user
+                                        training, and track adoption and effectiveness over time.</li>
+                                </ul>
+                                <p class="entry__tags">AI Agents · Workflow Automation · Solution Design · Client Enablement · Adoption Tracking</p>
+                            </div>
                         </li>
-                        <li>
-                            <a href="https://www.linkedin.com/in/hassan-al-hayawi-014831198/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+
+                        <li class="tl-item">
+                            <div class="entry__meta tl-meta">
+                                <span>Sept 2025 — Feb 2026</span>
+                                <span>Toronto, ON</span>
+                            </div>
+                            <div class="tl-node" aria-hidden="true"></div>
+                            <div class="entry__body tl-card">
+                                <h3 class="entry__title">Technical AI Researcher</h3>
+                                <p class="entry__org">M31 AI</p>
+                                <ul class="entry__points">
+                                    <li>Designed and executed large-scale GPU-accelerated experiments on HPC infrastructure.</li>
+                                    <li>Developed medical imaging ML workflows and deep learning architectures for 3D MRI analysis.</li>
+                                    <li>Predicted AVM recurrence in pediatric patients in collaboration with SickKids Hospital.</li>
+                                </ul>
+                                <p class="entry__tags">Deep Learning · Neural Networks (ResNet &amp; Transformer based models)</p>
+                            </div>
                         </li>
-                    </ul>
+
+                        <li class="tl-item">
+                            <div class="entry__meta tl-meta">
+                                <span>Jan 2025 — Sept 2025</span>
+                                <span>London, ON</span>
+                            </div>
+                            <div class="tl-node" aria-hidden="true"></div>
+                            <div class="entry__body tl-card">
+                                <h3 class="entry__title">Machine Learning Research Assistant</h3>
+                                <p class="entry__org">The Haeryfar Lab</p>
+                                <ul class="entry__points">
+                                    <li>Implemented and refined a transfer-learning CNN to fully automate detection and
+                                        scoring of liver inflammation and fibrosis in histology slides of a preclinical
+                                        mouse model.</li>
+                                    <li>Leveraged automated patch-based classification to replace labour-intensive manual
+                                        scoring, increasing speed and consistency in histopathological evaluation.</li>
+                                </ul>
+                                <p class="entry__tags">CNN · Histology data · Pathophysiology</p>
+                            </div>
+                        </li>
+
+                        <li class="tl-item">
+                            <div class="entry__meta tl-meta">
+                                <span>Sept 2022 — Dec 2024</span>
+                                <span>London, ON</span>
+                            </div>
+                            <div class="tl-node" aria-hidden="true"></div>
+                            <div class="entry__body tl-card">
+                                <h3 class="entry__title">Research Analyst</h3>
+                                <p class="entry__org">London Health Sciences Centre</p>
+                                <ul class="entry__points">
+                                    <li>Investigated temporal brain patterns in critical care patients using time-series
+                                        data from functional neuroimaging modalities:
+                                        <abbr title="Functional Near-Infrared Spectroscopy">fNIRS</abbr>,
+                                        <abbr title="Functional Magnetic Resonance Imaging">fMRI</abbr>, and
+                                        <abbr title="Electroencephalography">EEG</abbr>.</li>
+                                    <li>Produced data-driven insight with machine learning to enhance prognostic and
+                                        diagnostic capability in the <abbr title="Intensive Care Unit">ICU</abbr>.</li>
+                                </ul>
+                                <p class="entry__tags">Quantitative Research · Deep Learning · Statistics · Machine Learning · Feature Engineering · Functional Neuroimaging</p>
+                            </div>
+                        </li>
+
+                        <li class="tl-item">
+                            <div class="entry__meta tl-meta">
+                                <span>Oct 2021 — Aug 2022</span>
+                                <span>London, ON</span>
+                            </div>
+                            <div class="tl-node" aria-hidden="true"></div>
+                            <div class="entry__body tl-card">
+                                <h3 class="entry__title">Data Analyst</h3>
+                                <p class="entry__org">The Owen Lab</p>
+                                <ul class="entry__points">
+                                    <li>Statistical data analyst for lab research.</li>
+                                    <li>Preprocessed and analysed large high-dimensional datasets: noise reduction,
+                                        artifact removal, signal enhancement, statistical testing, optimization
+                                        algorithms, feature extraction, and data visualisation.</li>
+                                    <li>Used PCA for dimensionality reduction and ICA to eliminate artifacts and isolate
+                                        meaningful patterns.</li>
+                                </ul>
+                                <p class="entry__tags">Data Processing · Advanced Statistical Methods · Machine Learning · Optimization · Research Skills</p>
+                            </div>
+                        </li>
+
+                        <li class="tl-item">
+                            <div class="entry__meta tl-meta">
+                                <span>Sept 2022 — May 2024</span>
+                                <span>London, ON</span>
+                            </div>
+                            <div class="tl-node" aria-hidden="true"></div>
+                            <div class="entry__body tl-card">
+                                <h3 class="entry__title">Teaching Assistant</h3>
+                                <p class="entry__org">Western University</p>
+                                <ul class="entry__points">
+                                    <li>Independently led tutorials for Research Methods in Psychology (PSYCH 2801),
+                                        Psychology as a Social Science (PSYCH 1003), and Psychology as a Natural Science
+                                        (PSYCH 1002).</li>
+                                    <li>Instructed students to work with data, form and test hypotheses, and visualise and
+                                        interpret results effectively.</li>
+                                    <li>Collaborated with the course coordinator to align teaching and marking strategies
+                                        with course objectives.</li>
+                                    <li>Organised and moderated online discussion forums, facilitating peer-to-peer
+                                        knowledge sharing.</li>
+                                </ul>
+                                <p class="entry__tags">University Teaching · Fundamental Research Skills</p>
+                            </div>
+                        </li>
+
+                        <li class="tl-item">
+                            <div class="entry__meta tl-meta">
+                                <span>Oct 2020 — Dec 2021</span>
+                                <span>London, ON</span>
+                            </div>
+                            <div class="tl-node" aria-hidden="true"></div>
+                            <div class="entry__body tl-card">
+                                <h3 class="entry__title">Advanced Repair Agent</h3>
+                                <p class="entry__org">Best Buy</p>
+                                <ul class="entry__points">
+                                    <li>Documented and fixed issues with client laptops and desktop computers.</li>
+                                    <li>Maintained records of daily data communication transactions, problems and remedial
+                                        actions taken, and installation activities.</li>
+                                    <li>Trained users in the proper use of hardware and software.</li>
+                                </ul>
+                                <p class="entry__tags">Problem-solving · Technical Skills · Customer Service · Documentation</p>
+                            </div>
+                        </li>
+
+                        <li class="tl-item">
+                            <div class="entry__meta tl-meta">
+                                <span>Mar 2018 — Jan 2020</span>
+                                <span>Windsor, ON</span>
+                            </div>
+                            <div class="tl-node" aria-hidden="true"></div>
+                            <div class="entry__body tl-card">
+                                <h3 class="entry__title">Team Lead &amp; Field Marketing Representative</h3>
+                                <p class="entry__org">Kognitive Sales Solutions</p>
+                                <ul class="entry__points">
+                                    <li>Led a high-performing sales team during promotional events, driving product
+                                        visibility and customer engagement.</li>
+                                    <li>Hired as a Field Marketing Representative, exceeded sales targets, and was
+                                        promoted to Team Lead.</li>
+                                    <li>Recognised for consistently ranking at the top of the leaderboard for most sales.</li>
+                                </ul>
+                                <p class="entry__tags">Leadership · Collaboration · Customer Service · Sales</p>
+                            </div>
+                        </li>
+
+                    </ol>
                 </div>
             </div>
+        </section>
+
+        <!-- ========== SKILLS ========== -->
+        <section class="section" id="skills">
+            <div class="wrap section__inner">
+                <div class="section__head">
+                    <div class="section__label">                        <span class="section__index">04</span>
+                        <h2 class="section__title">Skills</h2>
+                    </div>
+                </div>
+
+                <div class="section__body reveal">
+                    <div class="terms">
+                        <div class="term-group">
+                            <h3 class="term-group__label">Code &amp; software</h3>
+                            <ul class="term-group__items">
+                                <li>Python</li><li>Linux</li><li>PySpark</li><li>SQL</li><li>SPSS</li><li>R</li>
+                                <li>MATLAB</li><li>BASH</li><li>HTML &amp; CSS</li><li>pandas</li><li>NumPy</li>
+                                <li>seaborn</li><li>matplotlib</li>
+                            </ul>
+                        </div>
+
+                        <div class="term-group">
+                            <h3 class="term-group__label">Machine learning &amp; AI</h3>
+                            <ul class="term-group__items">
+                                <li>PyTorch</li><li>TensorFlow</li><li>Keras</li><li>scikit-learn</li>
+                                <li>Supervised &amp; unsupervised learning</li><li>CNNs</li><li>ANNs</li>
+                                <li>LLMs</li><li>Transformer models</li><li>Feature engineering</li>
+                                <li>Model optimization</li><li>Google Cloud Platform</li><li>MLOps with Azure</li>
+                            </ul>
+                        </div>
+
+                        <div class="term-group">
+                            <h3 class="term-group__label">Research methodology</h3>
+                            <ul class="term-group__items">
+                                <li>Quantitative &amp; qualitative statistical analysis</li><li>Experimental design</li>
+                                <li>Project planning &amp; execution</li><li>Problem-solving &amp; troubleshooting</li>
+                                <li>Data interpretation</li>
+                            </ul>
+                        </div>
+
+                        <div class="term-group">
+                            <h3 class="term-group__label">Medical &amp; neuroimaging</h3>
+                            <ul class="term-group__items">
+                                <li>Electroencephalography (EEG)</li><li>Magnetic Resonance Imaging (MRI)</li>
+                                <li>Functional MRI (fMRI)</li><li>Functional Near-Infrared Spectroscopy (fNIRS)</li>
+                                <li>Computed Tomography (CT)</li><li>X-Ray</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== PROJECTS ========== -->
+        <section class="section" id="projects">
+            <div class="wrap section__inner">
+                <div class="section__head">
+                    <div class="section__label">                        <span class="section__index">05</span>
+                        <h2 class="section__title">Projects</h2>
+                        <p class="section__note">Selected work in medical imaging, computer vision and signal analysis.</p>
+                    </div>
+                </div>
+
+                <div class="section__body reveal">
+
+                    <article class="project">
+                        <figure class="project__figure">
+                            <picture>
+                                <source srcset="images/proj_logo_AVM.webp" type="image/webp">
+                                <img src="images/proj_logo_AVM.png" width="900" height="952" alt="Title page of the Journal of Neurosurgery: Pediatrics manuscript on deep learning prediction of brain AVM recurrence in children" loading="lazy" decoding="async">
+                            </picture>
+                        </figure>
+                        <div class="project__body">
+                            <h3 class="project__title">Deep learning for pediatric brain AVM recurrence</h3>
+                            <p class="project__result"><span>Patient-level AUROC 0.80</span> · 11-fold cross-validation</p>
+                            <ul class="entry__points">
+                                <li>Classified and predicted arteriovenous malformation recurrence after microsurgical
+                                    resection from routine clinical MRI (T1c, TOF-MRA) in a cohort of 120 children.</li>
+                                <li>Built 3D deep learning models, benchmarking a self-supervised pretrained ResNet
+                                    foundation model against ViT, SwinViT, DenseNet and SEResNet baselines.</li>
+                                <li>Applied Grad-CAM interpretability to highlight the imaging regions driving each
+                                    prediction.</li>
+                                <li>Manuscript in revision at <em>Journal of Neurosurgery: Pediatrics</em>. In
+                                    collaboration with the Hospital for Sick Children.</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="project">
+                        <figure class="project__figure">
+                            <picture>
+                                <source srcset="images/proj_logo_Xray.webp" type="image/webp">
+                                <img src="images/proj_logo_Xray.png" width="593" height="665" alt="Repository card for the X-ray pneumonia classification project" loading="lazy" decoding="async">
+                            </picture>
+                        </figure>
+                        <div class="project__body">
+                            <h3 class="project__title">CNN for binary image classification</h3>
+                            <p class="project__result"><span>81% accuracy · F1 83.8%</span></p>
+                            <ul class="entry__points">
+                                <li>Automatically classifies X-ray images of pneumonia-affected lungs, distinguishing them
+                                    from normal lungs.</li>
+                                <li>Fine-tuned a pre-trained CNN in PyTorch through data manipulation and transfer
+                                    learning, improving classification while minimising compute.</li>
+                                <li>Delivered modular scripts and clear documentation for data loading, training and
+                                    evaluation to streamline reproducibility.</li>
+                            </ul>
+                            <p class="project__links">
+                                <a href="https://github.com/Hassan9001/X-Ray_Classification_with_PyTorch" target="_blank" rel="noopener">
+                                    View on GitHub
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+                                </a>
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="project">
+                        <figure class="project__figure">
+                            <picture>
+                                <source srcset="images/proj_logo_UNET.webp" type="image/webp">
+                                <img src="images/proj_logo_UNET.png" width="676" height="783" alt="Repository card for the MRI U-Net image segmentation project" loading="lazy" decoding="async">
+                            </picture>
+                        </figure>
+                        <div class="project__body">
+                            <h3 class="project__title">U-Net segmentation of MRI mouse kidneys and bladders</h3>
+                            <p class="project__result"><span>Months of manual work → minutes</span> · 2–5% mean difference</p>
+                            <ul class="entry__points">
+                                <li>Manual MRI segmentation is costly and labour-intensive — a single dataset takes months
+                                    of tedious work. Automating it materially improves preclinical research throughput.</li>
+                                <li>Developed a U-Net convolutional neural network automating segmentation for kidney and
+                                    bladder volume analysis in oncological mouse models.</li>
+                                <li>Collaborated with immunology researchers to confirm segmentation accuracy; results
+                                    matched experienced manual segmenters within 2–5%.</li>
+                                <li>The model reliably assesses cancer progression in preclinical studies.</li>
+                            </ul>
+                            <p class="project__links">
+                                <a href="https://github.com/Hassan9001/MRI-UNET-Image-Segmentation/blob/main/README.md" target="_blank" rel="noopener">
+                                    View on GitHub
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+                                </a>
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="project">
+                        <figure class="project__figure">
+                            <picture>
+                                <source srcset="images/proj_logo_THESIS.webp" type="image/webp">
+                                <img src="images/proj_logo_THESIS.png" width="593" height="665" alt="Repository card for the ICU EEG complexity prognosis project" loading="lazy" decoding="async">
+                            </picture>
+                        </figure>
+                        <div class="project__body">
+                            <h3 class="project__title">EEG complexity for prognosis of ICU patients</h3>
+                            <p class="project__result"><span>80% accuracy · AUC 0.80–0.83</span></p>
+                            <ul class="entry__points">
+                                <li>Binary classification on EEG complexity features to assess ICU patient prognosis.</li>
+                                <li>Used explainable statistical techniques to improve model transparency and
+                                    interpretability.</li>
+                                <li>Evaluated performance with cross-validation across accuracy, precision, recall and
+                                    area under the ROC curve.</li>
+                                <li>Predicted a patient’s future clinical outcome from EEG recorded at early ICU admission.</li>
+                            </ul>
+                            <p class="project__links">
+                                <a href="https://uwo.scholaris.ca/server/api/core/bitstreams/2a7ec879-25a1-49a3-918d-df9013f587c3/content" target="_blank" rel="noopener">
+                                    Read the thesis
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+                                </a>
+                                <a href="https://github.com/Hassan9001/Prognosis_of_ICU_Patients_with_EEG_Complexity" target="_blank" rel="noopener">
+                                    View on GitHub
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+                                </a>
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="project">
+                        <figure class="project__figure">
+                            <img src="images/montage.PNG" width="664" height="566" alt="Montage of simultaneous EEG and fNIRS sensor placement" loading="lazy" decoding="async">
+                        </figure>
+                        <div class="project__body">
+                            <h3 class="project__title">Simultaneous EEG-fNIRS to model the HRF of brain-injured patients</h3>
+                            <p class="project__result"><span>Ontario Graduate Scholarship</span> · awarded on proposal</p>
+                            <ul class="entry__points">
+                                <li>Estimates the hemodynamic response function of patients using a gradient-descent
+                                    search algorithm that maximises the Pearson correlation between recorded fNIRS and
+                                    EEG signals.</li>
+                                <li>Improves the accuracy and sensitivity of functional neuroimaging results by accounting
+                                    for underlying physiological mechanisms.</li>
+                            </ul>
+                            <p class="project__links">
+                                <a href="https://medium.com/@hassan.alhayawi/characterization-of-the-hemodynamic-response-function-in-acute-brain-injury-patients-895ed3537e76" target="_blank" rel="noopener">
+                                    Read the write-up
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+                                </a>
+                            </p>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== AWARDS ========== -->
+        <section class="section" id="awards">
+            <div class="wrap section__inner">
+                <div class="section__head">
+                    <div class="section__label">                        <span class="section__index">06</span>
+                        <h2 class="section__title">Awards</h2>
+                    </div>
+                </div>
+
+                <div class="section__body reveal">
+
+                    <div class="award-group">
+                        <div class="award-group__head">
+                            <h3 class="award-group__title">Scholarships &amp; funding</h3>
+                            <span class="award-group__total">$64,500 total</span>
+                        </div>
+                        <ul class="award-list">
+                            <li><span class="year">2024</span><span>Ontario Graduate Scholarship (OGS) — <span class="value">$15,000</span></span></li>
+                            <li><span class="year">2023</span><span>Reva Gerstein Fellowship — <span class="value">$4,000</span></span></li>
+                            <li><span class="year">2022</span><span>Ontario Graduate Scholarship (OGS) — <span class="value">$15,000</span></span></li>
+                            <li><span class="year">21–22</span><span>Ontario Wrestling Carding — <span class="value">$3,000</span></span></li>
+                            <li><span class="year">18–22</span><span>Peter Lockyer Wrestling Award — <span class="value">$10,500</span></span></li>
+                            <li><span class="year">18–21</span><span>King’s Academic Athletic Scholarship — <span class="value">$12,500</span></span></li>
+                            <li><span class="year">18–21</span><span>King’s Continuing Admission Academic Scholarship — <span class="value">$4,500</span></span></li>
+                        </ul>
+                    </div>
+
+                    <div class="award-group">
+                        <div class="award-group__head">
+                            <h3 class="award-group__title">Academic distinction</h3>
+                        </div>
+                        <ul class="award-list">
+                            <li><span class="year">19–23</span><span>U-Sports Academic All-Canadian — for student-athletes competing nationally while maintaining high grades</span></li>
+                            <li><span class="year">19–22</span><span>King’s University College Dean’s List</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="award-group">
+                        <div class="award-group__head">
+                            <h3 class="award-group__title">Athletics</h3>
+                        </div>
+                        <div class="with-figure">
+                        <ul class="award-list">
+                            <li><span class="year">2023</span><span><span class="value medal medal--gold">Gold</span> — Canadian National Wrestling Championships, Greco-Roman</span></li>
+                            <li><span class="year">2023</span><span><span class="value medal medal--gold">Gold</span> — Ontario University Athletics (OUA) Wrestling Championship</span></li>
+                            <li><span class="year">2023</span><span><span class="value medal medal--silver">Silver</span> — <abbr title="University National Canadian Championships">U-Sports</abbr> Wrestling Championship</span></li>
+                            <li><span class="year">2021</span><span><span class="value medal medal--gold">Gold</span> — Ontario Senior Wrestling Provincial Championship</span></li>
+                            <li><span class="year">2021</span><span>Bronze W Award — Western Varsity Wrestling</span></li>
+                            <li><span class="year">19–20</span><span>Most Dedicated Athlete — Western Varsity Wrestling</span></li>
+                            <li><span class="year">2019</span><span>Male Rookie of the Year — Western Varsity Wrestling</span></li>
+                            <li><span class="year">2018</span><span><span class="value medal medal--bronze">Bronze</span> — <abbr title="Ontario Federation of School Athletic Associations">OFSAA</abbr> championship</span></li>
+                            <li><span class="year">17–18</span><span><span class="value medal medal--gold">Gold</span> — <abbr title="Windsor Essex County Secondary School Athletic Association">WECSSAA</abbr> &amp; <abbr title="Southwestern Ontario Secondary School Athletic Association">SWOSSAA</abbr> championships</span></li>
+                            <li><span class="year">2017</span><span>Most Outstanding Wrestler — <abbr title="Southwestern Ontario Secondary School Athletic Association">SWOSSAA</abbr></span></li>
+                            <li><span class="year">2017</span><span>Senior Athlete of the Year — Vincent Massey Secondary School</span></li>
+                            <li><span class="year">2017</span><span>Trophy, 12th Annual <abbr title="Windsor/Essex Sports Person of the Year">WESPY</abbr> Awards</span></li>
+                            <li><span class="year">2017</span><span>1st Team All-City Defensive Back — Windsor High School Football</span></li>
+                        </ul>
+                        <figure class="side-figure">
+                            <picture>
+                                <source srcset="images/WrestlingTransparent_cropped2.webp" type="image/webp">
+                                <img src="images/WrestlingTransparent_cropped2.png" width="760" height="1164" alt="Hassan Al-Hayawi in a Western Mustangs wrestling singlet" loading="lazy" decoding="async">
+                            </picture>
+                        </figure>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== PUBLICATIONS ========== -->
+        <section class="section" id="pubs">
+            <div class="wrap section__inner">
+                <div class="section__head">
+                    <div class="section__label">                        <span class="section__index">07</span>
+                        <h2 class="section__title">Publications</h2>
+                    </div>
+                </div>
+
+                <div class="section__body reveal">
+                    <h3 class="subhead">Manuscripts</h3>
+                    <ol class="citations">
+                        <li class="citation">
+                            <strong>Al-Hayawi H</strong>, Kim S, Ma J, Wang B, Quon J. Deep learning prediction of AVM
+                            recurrence in children. <em>Journal of Neurosurgery: Pediatrics</em> (in revision).
+                        </li>
+                        <li class="citation">
+                            Wang X, <strong>Al-Hayawi H</strong>, Norton L, Gofton TE, Debicki DB, Slessarev M, Owen AM.
+                            Optimized simultaneous assessment of subcortical and cortical auditory responses through
+                            frequency-tagged roving paradigm <em>(in preparation)</em>.
+                            <a href="https://doi.org/10.1111/ejn.70337" target="_blank" rel="noopener">doi.org/10.1111/ejn.70337</a>
+                        </li>
+                        <li class="citation">
+                            Maschke C, Norton L, Duclos C, Dolhan K, Han M, Laforge G, Frantz A, Wang X,
+                            <strong>Al-Hayawi H</strong>, Zhang T, Lavoie R, Owen AM, Blain-Moraes S (2024). EEG response
+                            to sedation interruption complements behavioral assessment after severe brain injury.
+                            <em>Annals of Clinical and Translational Neurology</em>.
+                            <a href="https://doi.org/10.1101/2024.10.02.24314815" target="_blank" rel="noopener">doi.org/10.1101/2024.10.02.24314815</a>
+                        </li>
+                    </ol>
+
+                    <h3 class="subhead">Conference abstracts</h3>
+                    <ol class="citations">
+                        <li class="citation">
+                            <strong>Al-Hayawi H</strong>, Laforge G, Novi SL, Wang X, Debicki DB, Norton L, Owen AM.
+                            Leveraging electroencephalography and machine learning for predicting neurologic recovery
+                            after acute brain injury. <em>London Health Research Day</em>, London, Canada. May 2024.
+                        </li>
+                        <li class="citation">
+                            <strong>Al-Hayawi H</strong>, Laforge G, Norton L, Owen AM. Complexity modulation with
+                            naturalistic narrative stimuli for prognosis of acute brain-injured patients.
+                            <em>Cognitive Neuroscience Society 31st Annual Meeting</em>, Toronto, Canada. April 2024.
+                        </li>
+                        <li class="citation">
+                            <strong>Al-Hayawi H</strong>, Laforge G, Novi SL, Wang X, Debicki DB, Norton L, Owen AM.
+                            Using EEG and machine learning for predicting neurologic recovery after acute brain injury.
+                            <em>51st Annual Lake Ontario Visionary Establishment (L.O.V.E.) Conference</em>,
+                            Niagara Falls, Canada. February 2024.
+                        </li>
+                        <li class="citation">
+                            <strong>Al-Hayawi H</strong>, Norton L, Kazazian K, Gofton TE, Owen AM. Cortical function of
+                            super refractory status epilepticus: an fMRI case study. <em>London Health Research Day</em>,
+                            London, Canada. May 2022.
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== CONTACT ========== -->
+        <section class="section" id="contact">
+            <div class="wrap section__inner">
+                <div class="section__head">
+                    <div class="section__label">                        <span class="section__index">08</span>
+                        <h2 class="section__title">Get in touch</h2>
+                    </div>
+                </div>
+
+                <div class="section__body">
+                    <div class="contact__grid">
+                        <div>
+                            <p class="contact__lead">Open to conversations about applied AI, medical imaging, and
+                                machine-learning research.</p>
+
+                            <div class="contact__direct">
+                                <p class="contact__item">
+                                    <span class="label">Email</span>
+                                    <a href="mailto:Halhaya@uwo.ca">Halhaya@uwo.ca</a>
+                                </p>
+                                <p class="contact__item">
+                                    <span class="label">Phone</span>
+                                    <a href="tel:+15199827062">519-982-7062</a>
+                                </p>
+                                <p class="contact__item">
+                                    <span class="label">Location</span>
+                                    <span>Toronto, Ontario, Canada</span>
+                                </p>
+                            </div>
+                        </div>
+
+                        <form action="https://formspree.io/f/myzzlyry" method="POST">
+                            <input type="hidden" name="_subject" value="Contact request from personal website">
+                            <div class="field">
+                                <label for="email">Your email</label>
+                                <input id="email" type="email" name="_replyto" autocomplete="email" required>
+                            </div>
+                            <div class="field">
+                                <label for="message">Your message</label>
+                                <textarea id="message" name="message" required></textarea>
+                            </div>
+                            <button class="btn" type="submit">Send message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="site-footer">
+        <div class="wrap">
+            <p>© <span id="year">2026</span> Hassan Al-Hayawi</p>
+            <ul class="social">
+                <li>
+                    <a href="https://github.com/Hassan9001" target="_blank" rel="noopener" aria-label="GitHub">
+                        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5A11.5 11.5 0 0 0 .5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.38-3.88-1.38-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.2 1.77 1.2 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.56-.29-5.25-1.28-5.25-5.7 0-1.26.45-2.29 1.19-3.1-.12-.3-.52-1.47.11-3.06 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.12 3.05.74.82 1.18 1.85 1.18 3.11 0 4.43-2.69 5.41-5.26 5.69.41.36.78 1.06.78 2.14v3.18c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5Z"/></svg>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/hassan-al-hayawi-014831198/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05a3.74 3.74 0 0 1 3.37-1.85c3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14ZM7.12 20.45H3.55V9h3.57v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></svg>
+                    </a>
+                </li>
+            </ul>
         </div>
     </footer>
-    <!-- End footer -->
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="js/scripts.js"></script> 
-    <!-- <script src="js/scripts.min.js"></script> -->
-
-<!-- FIXINg mobile menu and scrolling position issue -->
-<script>
-  (function ($) {
-    if (!window.jQuery) return;
-
-    let scrollY = 0;
-
-    // OPEN mobile menu
-    $('#mobile-menu-open').off('click').on('click', function () {
-      scrollY = window.scrollY;
-
-      $('body')
-        .css('top', `-${scrollY}px`)
-        .addClass('active');
-
-      $('header').addClass('active');
-    });
-
-    // CLOSE mobile menu
-    $('#mobile-menu-close').off('click').on('click', function () {
-      $('body')
-        .removeClass('active')
-        .css('top', '');
-
-      $('header').removeClass('active');
-
-      window.scrollTo(0, scrollY);
-    });
-
-  })(window.jQuery);
-</script>
-<!-- AUTO SCROLL SPEED WHEN HEAD OPTION IS CLICKED -->
-<script>
-  (function ($) {
-    if (!window.jQuery) return;
-
-    const DURATION_MS = 1000; // same speed for every link (try 300–800)
-
-    $('header a').off('click').on('click', function (e) {
-      if ($(this).hasClass('no-scroll')) return;
-
-      e.preventDefault();
-
-      const heading = $(this).attr('href');
-      const $target = $(heading);
-      if (!$target.length) return;
-
-      $('html, body')
-        .stop(true)
-        .animate({ scrollTop: $target.offset().top + 'px' }, DURATION_MS);
-
-      // close mobile menu if open
-      if ($('header').hasClass('active')) {
-        $('header, body').removeClass('active');
-      }
-    });
-  })(window.jQuery);
-</script>
-<!-- HEADER OPTIONS BANNER disapears when scrolling down and apears when scrolling up -->
-<script>
-  (function () {
-    const header = document.querySelector("header");
-    if (!header) return;
-
-    let lastY = window.scrollY;
-    const threshold = 10;     // ignore tiny scroll jitters
-    const showAtTop = 50;     // always show near top
-    const desktopOnlyBreakpoint = 768;
-
-    function isDesktop() {
-      return window.innerWidth > desktopOnlyBreakpoint;
-    }
-
-    window.addEventListener("scroll", () => {
-      const y = window.scrollY;
-      const delta = y - lastY;
-
-      // Disable hide/show behavior on small screens
-      if (!isDesktop()) {
-        header.classList.remove("nav-hidden");
-        lastY = y;
-        return;
-      }
-      // Always show close to the top
-      if (y < showAtTop) {
-        header.classList.remove("nav-hidden");
-        lastY = y;
-        return;
-      }
-      // Scrolling down => hide
-      if (delta > threshold) {
-        header.classList.add("nav-hidden");
-        lastY = y;
-        return;
-      }
-      // Scrolling up => show
-      if (delta < -threshold) {
-        header.classList.remove("nav-hidden");
-        lastY = y;
-        return;
-      }
-    }, { passive: true });
-
-    // Also force the header visible whenever resizing down to mobile
-    window.addEventListener("resize", () => {
-      if (!isDesktop()) {
-        header.classList.remove("nav-hidden");
-      }
-    });
-  })();
-</script>
+    <script src="js/scripts.js"></script>
 </body>
 
 </html>
